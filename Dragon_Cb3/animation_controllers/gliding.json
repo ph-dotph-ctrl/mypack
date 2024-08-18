@@ -1,0 +1,30 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.gliding": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"scroll": "query.is_gliding"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 5"
+					]
+				},
+				"scroll": {
+					"transitions": [
+						{
+							"default": "!query.is_gliding"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 0"
+					]
+				}
+			}
+		}
+	}
+}

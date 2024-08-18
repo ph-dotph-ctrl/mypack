@@ -1,0 +1,3227 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\entities\\cave_spider.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "31aa45c9_62de_44f6_972f_6da6aeb501c6",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.16.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.16.0",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "minecraft:cave_spider",
+							"is_spawnable": true,
+							"is_summonable": true,
+							"is_experimental": false
+						},
+						"component_groups": {
+							"minecraft:spider_jockey": {
+								"minecraft:addrider": {
+									"entity_type": "minecraft:skeleton"
+								},
+								"minecraft:rideable": {
+									"seat_count": 1,
+									"family_types": [
+										"skeleton"
+									],
+									"seats": {
+										"position": [
+											0,
+											0.3,
+											-0.1
+										]
+									}
+								}
+							},
+							"minecraft:spider_stray_jockey": {
+								"minecraft:addrider": {
+									"entity_type": "minecraft:skeleton.stray"
+								},
+								"minecraft:rideable": {
+									"seat_count": 1,
+									"family_types": [
+										"skeleton"
+									],
+									"seats": {
+										"position": [
+											0,
+											0.3,
+											-0.1
+										]
+									}
+								}
+							},
+							"minecraft:spider_wither_jockey": {
+								"minecraft:addrider": {
+									"entity_type": "minecraft:skeleton.wither"
+								},
+								"minecraft:rideable": {
+									"seat_count": 1,
+									"family_types": [
+										"skeleton"
+									],
+									"seats": {
+										"position": [
+											0,
+											0.25,
+											-0.1
+										]
+									}
+								}
+							},
+							"minecraft:spider_neutral": {
+								"minecraft:environment_sensor": {
+									"triggers": {
+										"filters": {
+											"test": "is_brightness",
+											"operator": "<",
+											"value": 0.49
+										},
+										"event": "minecraft:become_hostile"
+									}
+								},
+								"minecraft:on_target_acquired": {
+									"event": "minecraft:become_angry"
+								}
+							},
+							"minecraft:spider_hostile": {
+								"minecraft:environment_sensor": {
+									"triggers": {
+										"filters": {
+											"test": "is_brightness",
+											"operator": ">",
+											"value": 0.49
+										},
+										"event": "minecraft:become_neutral"
+									}
+								},
+								"minecraft:behavior.nearest_attackable_target": {
+									"priority": 2,
+									"must_see": true,
+									"attack_interval": 5,
+									"entity_types": [
+										{
+											"filters": {
+												"any_of": [
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "player"
+													},
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "snowgolem"
+													},
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "irongolem"
+													}
+												]
+											},
+											"max_dist": 16
+										}
+									]
+								},
+								"minecraft:behavior.leap_at_target": {
+									"priority": 4,
+									"yd": 0.4,
+									"must_be_on_ground": false
+								},
+								"minecraft:behavior.melee_attack": {
+									"priority": 3,
+									"track_target": true,
+									"random_stop_interval": 100,
+									"reach_multiplier": 0.8
+								}
+							},
+							"minecraft:spider_angry": {
+								"minecraft:angry": {
+									"duration": 10,
+									"duration_delta": 3,
+									"calm_event": {
+										"event": "minecraft:on_calm",
+										"target": "self"
+									}
+								},
+								"minecraft:behavior.nearest_attackable_target": {
+									"priority": 2,
+									"must_see": true,
+									"attack_interval": 10,
+									"entity_types": [
+										{
+											"filters": {
+												"any_of": [
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "player"
+													},
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "snowgolem"
+													},
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "irongolem"
+													}
+												]
+											},
+											"max_dist": 16
+										}
+									]
+								},
+								"minecraft:behavior.leap_at_target": {
+									"priority": 4,
+									"yd": 0.4,
+									"must_be_on_ground": false
+								},
+								"minecraft:behavior.melee_attack": {
+									"priority": 3,
+									"track_target": true,
+									"reach_multiplier": 1.4
+								}
+							},
+							"minecraft:spider_poison_easy": {
+								"minecraft:attack": {
+									"damage": 2,
+									"effect_name": "poison",
+									"effect_duration": 0
+								}
+							},
+							"minecraft:spider_poison_normal": {
+								"minecraft:attack": {
+									"damage": 2,
+									"effect_name": "poison",
+									"effect_duration": 7
+								}
+							},
+							"minecraft:spider_poison_hard": {
+								"minecraft:attack": {
+									"damage": 2,
+									"effect_name": "poison",
+									"effect_duration": 15
+								}
+							},
+							"despawn": {
+								"minecraft:instant_despawn": {}
+							}
+						},
+						"components": {
+							"minecraft:is_hidden_when_invisible": {},
+							"minecraft:experience_reward": {
+								"on_death": "query.last_hit_by_player ? 5 : 0"
+							},
+							"minecraft:type_family": {
+								"family": [
+									"cavespider",
+									"monster",
+									"arthropod",
+									"mob"
+								]
+							},
+							"minecraft:breathable": {
+								"total_supply": 15,
+								"suffocate_time": 0
+							},
+							"minecraft:nameable": {},
+							"minecraft:loot": {
+								"table": "loot_tables/entities/spider.json"
+							},
+							"minecraft:collision_box": {
+								"width": 0.7,
+								"height": 0.5
+							},
+							"minecraft:health": {
+								"value": 12,
+								"max": 12
+							},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"cause": "lava",
+										"damage_per_tick": 4
+									}
+								]
+							},
+							"minecraft:movement": {
+								"value": 0.3
+							},
+							"minecraft:navigation.climb": {
+								"can_path_over_water": true
+							},
+							"minecraft:movement.basic": {},
+							"minecraft:jump.static": {},
+							"minecraft:can_climb": {},
+							"minecraft:despawn": {
+								"despawn_from_distance": {}
+							},
+							"minecraft:behavior.float": {
+								"priority": 1
+							},
+							"minecraft:behavior.mount_pathing": {
+								"priority": 5,
+								"speed_multiplier": 1.25,
+								"target_dist": 0,
+								"track_target": true
+							},
+							"minecraft:behavior.random_stroll": {
+								"priority": 6,
+								"speed_multiplier": 0.8
+							},
+							"minecraft:behavior.look_at_player": {
+								"priority": 7,
+								"look_distance": 6,
+								"probability": 0.02
+							},
+							"minecraft:behavior.random_look_around": {
+								"priority": 7
+							},
+							"minecraft:behavior.hurt_by_target": {
+								"priority": 1
+							},
+							"minecraft:rideable": {
+								"seat_count": 1,
+								"family_types": [
+									"zombie"
+								],
+								"seats": {
+									"position": [
+										0,
+										0.3,
+										0
+									]
+								}
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						},
+						"events": {
+							"minecraft:entity_spawned": {
+								"randomize": [
+									{
+										"weight": 1,
+										"randomize": [
+											{
+												"weight": 80,
+												"filters": {
+													"all_of": [
+														{
+															"test": "is_daytime",
+															"value": false
+														},
+														{
+															"test": "is_snow_covered",
+															"value": true
+														},
+														{
+															"test": "is_underground",
+															"value": false
+														}
+													]
+												},
+												"remove": {},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_stray_jockey",
+														"minecraft:spider_neutral"
+													]
+												}
+											},
+											{
+												"weight": 80,
+												"filters": {
+													"test": "is_biome",
+													"value": "the_nether"
+												},
+												"remove": {},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_wither_jockey",
+														"minecraft:spider_neutral"
+													]
+												}
+											},
+											{
+												"weight": 20,
+												"filters": {
+													"all_of": [
+														{
+															"test": "is_daytime",
+															"value": false
+														},
+														{
+															"test": "is_underground",
+															"value": true
+														}
+													]
+												},
+												"remove": {},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_jockey",
+														"minecraft:spider_neutral"
+													]
+												}
+											}
+										]
+									},
+									{
+										"weight": 99,
+										"remove": {},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									}
+								]
+							},
+							"minecraft:become_hostile": {
+								"sequence": [
+									{
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_hostile"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "easy"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_hard",
+												"minecraft:spider_poison_normal"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_easy"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "normal"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_easy",
+												"minecraft:spider_poison_hard"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_normal"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "hard"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_easy",
+												"minecraft:spider_poison_normal"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_hard"
+											]
+										}
+									}
+								]
+							},
+							"minecraft:become_neutral": {
+								"remove": {
+									"component_groups": [
+										"minecraft:spider_hostile"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minecraft:spider_neutral"
+									]
+								}
+							},
+							"minecraft:become_angry": {
+								"sequence": [
+									{
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_angry"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "easy"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_hard",
+												"minecraft:spider_poison_normal"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_easy"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "normal"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_easy",
+												"minecraft:spider_poison_hard"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_normal"
+											]
+										}
+									},
+									{
+										"filters": {
+											"test": "is_difficulty",
+											"value": "hard"
+										},
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_poison_easy",
+												"minecraft:spider_poison_normal"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_poison_hard"
+											]
+										}
+									}
+								]
+							},
+							"minecraft:on_calm": {
+								"remove": {
+									"component_groups": [
+										"minecraft:spider_angry"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minecraft:spider_neutral"
+									]
+								}
+							},
+							"despawn_cave_spider": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							},
+							"despawn_all_mobs": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:cave_spider",
+							"is_spawnable": true,
+							"is_summonable": true,
+							"is_experimental": false
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:cave_spider",
+								"is_spawnable": true,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"minecraft:spider_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_stray_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.stray"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_wither_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.wither"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.25,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_neutral": {
+									"minecraft:environment_sensor": {
+										"triggers": {
+											"filters": {
+												"test": "is_brightness",
+												"operator": "<",
+												"value": 0.49
+											},
+											"event": "minecraft:become_hostile"
+										}
+									},
+									"minecraft:on_target_acquired": {
+										"event": "minecraft:become_angry"
+									}
+								},
+								"minecraft:spider_hostile": {
+									"minecraft:environment_sensor": {
+										"triggers": {
+											"filters": {
+												"test": "is_brightness",
+												"operator": ">",
+												"value": 0.49
+											},
+											"event": "minecraft:become_neutral"
+										}
+									},
+									"minecraft:behavior.nearest_attackable_target": {
+										"priority": 2,
+										"must_see": true,
+										"attack_interval": 5,
+										"entity_types": [
+											{
+												"filters": {
+													"any_of": [
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "player"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "snowgolem"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "irongolem"
+														}
+													]
+												},
+												"max_dist": 16
+											}
+										]
+									},
+									"minecraft:behavior.leap_at_target": {
+										"priority": 4,
+										"yd": 0.4,
+										"must_be_on_ground": false
+									},
+									"minecraft:behavior.melee_attack": {
+										"priority": 3,
+										"track_target": true,
+										"random_stop_interval": 100,
+										"reach_multiplier": 0.8
+									}
+								},
+								"minecraft:spider_angry": {
+									"minecraft:angry": {
+										"duration": 10,
+										"duration_delta": 3,
+										"calm_event": {
+											"event": "minecraft:on_calm",
+											"target": "self"
+										}
+									},
+									"minecraft:behavior.nearest_attackable_target": {
+										"priority": 2,
+										"must_see": true,
+										"attack_interval": 10,
+										"entity_types": [
+											{
+												"filters": {
+													"any_of": [
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "player"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "snowgolem"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "irongolem"
+														}
+													]
+												},
+												"max_dist": 16
+											}
+										]
+									},
+									"minecraft:behavior.leap_at_target": {
+										"priority": 4,
+										"yd": 0.4,
+										"must_be_on_ground": false
+									},
+									"minecraft:behavior.melee_attack": {
+										"priority": 3,
+										"track_target": true,
+										"reach_multiplier": 1.4
+									}
+								},
+								"minecraft:spider_poison_easy": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 0
+									}
+								},
+								"minecraft:spider_poison_normal": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 7
+									}
+								},
+								"minecraft:spider_poison_hard": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 15
+									}
+								},
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:is_hidden_when_invisible": {},
+								"minecraft:experience_reward": {
+									"on_death": "query.last_hit_by_player ? 5 : 0"
+								},
+								"minecraft:type_family": {
+									"family": [
+										"cavespider",
+										"monster",
+										"arthropod",
+										"mob"
+									]
+								},
+								"minecraft:breathable": {
+									"total_supply": 15,
+									"suffocate_time": 0
+								},
+								"minecraft:nameable": {},
+								"minecraft:loot": {
+									"table": "loot_tables/entities/spider.json"
+								},
+								"minecraft:collision_box": {
+									"width": 0.7,
+									"height": 0.5
+								},
+								"minecraft:health": {
+									"value": 12,
+									"max": 12
+								},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"test": "in_lava",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"cause": "lava",
+											"damage_per_tick": 4
+										}
+									]
+								},
+								"minecraft:movement": {
+									"value": 0.3
+								},
+								"minecraft:navigation.climb": {
+									"can_path_over_water": true
+								},
+								"minecraft:movement.basic": {},
+								"minecraft:jump.static": {},
+								"minecraft:can_climb": {},
+								"minecraft:despawn": {
+									"despawn_from_distance": {}
+								},
+								"minecraft:behavior.float": {
+									"priority": 1
+								},
+								"minecraft:behavior.mount_pathing": {
+									"priority": 5,
+									"speed_multiplier": 1.25,
+									"target_dist": 0,
+									"track_target": true
+								},
+								"minecraft:behavior.random_stroll": {
+									"priority": 6,
+									"speed_multiplier": 0.8
+								},
+								"minecraft:behavior.look_at_player": {
+									"priority": 7,
+									"look_distance": 6,
+									"probability": 0.02
+								},
+								"minecraft:behavior.random_look_around": {
+									"priority": 7
+								},
+								"minecraft:behavior.hurt_by_target": {
+									"priority": 1
+								},
+								"minecraft:rideable": {
+									"seat_count": 1,
+									"family_types": [
+										"zombie"
+									],
+									"seats": {
+										"position": [
+											0,
+											0.3,
+											0
+										]
+									}
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"minecraft:entity_spawned": {
+									"randomize": [
+										{
+											"weight": 1,
+											"randomize": [
+												{
+													"weight": 80,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_snow_covered",
+																"value": true
+															},
+															{
+																"test": "is_underground",
+																"value": false
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_stray_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 80,
+													"filters": {
+														"test": "is_biome",
+														"value": "the_nether"
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_wither_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 20,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_underground",
+																"value": true
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												}
+											]
+										},
+										{
+											"weight": 99,
+											"remove": {},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:become_hostile": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_hostile"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:become_neutral": {
+									"remove": {
+										"component_groups": [
+											"minecraft:spider_hostile"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:spider_neutral"
+										]
+									}
+								},
+								"minecraft:become_angry": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_angry"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:on_calm": {
+									"remove": {
+										"component_groups": [
+											"minecraft:spider_angry"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:spider_neutral"
+										]
+									}
+								},
+								"despawn_cave_spider": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "component_groups",
+						"children": [
+							{
+								"key": "minecraft:spider_jockey",
+								"is_minified": true,
+								"children": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_stray_jockey",
+								"is_minified": true,
+								"children": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.stray"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_wither_jockey",
+								"is_minified": true,
+								"children": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.wither"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.25,
+												-0.1
+											]
+										}
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_neutral",
+								"children": [
+									{
+										"open": {
+											"minecraft:environment_sensor": {
+												"triggers": {
+													"filters": {
+														"test": "is_brightness",
+														"operator": "<",
+														"value": 0.49
+													},
+													"event": "minecraft:become_hostile"
+												}
+											},
+											"minecraft:on_target_acquired": {
+												"event": "minecraft:become_angry"
+											}
+										},
+										"key": "minecraft:environment_sensor",
+										"children": [
+											{
+												"open": {
+													"triggers": {
+														"filters": {
+															"test": "is_brightness",
+															"operator": "<",
+															"value": 0.49
+														},
+														"event": "minecraft:become_hostile"
+													}
+												},
+												"key": "triggers",
+												"children": [
+													{
+														"open": {
+															"filters": {
+																"test": "is_brightness",
+																"operator": "<",
+																"value": 0.49
+															},
+															"event": "minecraft:become_hostile"
+														},
+														"key": "filters",
+														"is_minified": true,
+														"children": {
+															"test": "is_brightness",
+															"operator": "<",
+															"value": 0.49
+														}
+													},
+													{
+														"data": "minecraft:become_hostile",
+														"key": "event"
+													}
+												]
+											}
+										]
+									},
+									{
+										"key": "minecraft:on_target_acquired",
+										"is_minified": true,
+										"children": {
+											"event": "minecraft:become_angry"
+										}
+									}
+								]
+							},
+							{
+								"key": "minecraft:spider_hostile",
+								"children": [
+									{
+										"open": {
+											"minecraft:environment_sensor": {
+												"triggers": {
+													"filters": {
+														"test": "is_brightness",
+														"operator": ">",
+														"value": 0.49
+													},
+													"event": "minecraft:become_neutral"
+												}
+											},
+											"minecraft:behavior.nearest_attackable_target": {
+												"priority": 2,
+												"must_see": true,
+												"attack_interval": 5,
+												"entity_types": [
+													{
+														"filters": {
+															"any_of": [
+																{
+																	"test": "is_family",
+																	"subject": "other",
+																	"value": "player"
+																},
+																{
+																	"test": "is_family",
+																	"subject": "other",
+																	"value": "snowgolem"
+																},
+																{
+																	"test": "is_family",
+																	"subject": "other",
+																	"value": "irongolem"
+																}
+															]
+														},
+														"max_dist": 16
+													}
+												]
+											},
+											"minecraft:behavior.leap_at_target": {
+												"priority": 4,
+												"yd": 0.4,
+												"must_be_on_ground": false
+											},
+											"minecraft:behavior.melee_attack": {
+												"priority": 3,
+												"track_target": true,
+												"random_stop_interval": 100,
+												"reach_multiplier": 0.8
+											}
+										},
+										"key": "minecraft:environment_sensor",
+										"children": [
+											{
+												"open": {
+													"triggers": {
+														"filters": {
+															"test": "is_brightness",
+															"operator": ">",
+															"value": 0.49
+														},
+														"event": "minecraft:become_neutral"
+													}
+												},
+												"key": "triggers",
+												"is_minified": true,
+												"children": {
+													"filters": {
+														"test": "is_brightness",
+														"operator": ">",
+														"value": 0.49
+													},
+													"event": "minecraft:become_neutral"
+												}
+											}
+										]
+									},
+									{
+										"key": "minecraft:behavior.nearest_attackable_target",
+										"is_minified": true,
+										"children": {
+											"priority": 2,
+											"must_see": true,
+											"attack_interval": 5,
+											"entity_types": [
+												{
+													"filters": {
+														"any_of": [
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "player"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "snowgolem"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "irongolem"
+															}
+														]
+													},
+													"max_dist": 16
+												}
+											]
+										}
+									},
+									{
+										"key": "minecraft:behavior.leap_at_target",
+										"is_minified": true,
+										"children": {
+											"priority": 4,
+											"yd": 0.4,
+											"must_be_on_ground": false
+										}
+									},
+									{
+										"key": "minecraft:behavior.melee_attack",
+										"is_minified": true,
+										"children": {
+											"priority": 3,
+											"track_target": true,
+											"random_stop_interval": 100,
+											"reach_multiplier": 0.8
+										}
+									}
+								]
+							},
+							{
+								"key": "minecraft:spider_angry",
+								"is_minified": true,
+								"children": {
+									"minecraft:angry": {
+										"duration": 10,
+										"duration_delta": 3,
+										"calm_event": {
+											"event": "minecraft:on_calm",
+											"target": "self"
+										}
+									},
+									"minecraft:behavior.nearest_attackable_target": {
+										"priority": 2,
+										"must_see": true,
+										"attack_interval": 10,
+										"entity_types": [
+											{
+												"filters": {
+													"any_of": [
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "player"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "snowgolem"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "irongolem"
+														}
+													]
+												},
+												"max_dist": 16
+											}
+										]
+									},
+									"minecraft:behavior.leap_at_target": {
+										"priority": 4,
+										"yd": 0.4,
+										"must_be_on_ground": false
+									},
+									"minecraft:behavior.melee_attack": {
+										"priority": 3,
+										"track_target": true,
+										"reach_multiplier": 1.4
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_poison_easy",
+								"is_minified": true,
+								"children": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 0
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_poison_normal",
+								"is_minified": true,
+								"children": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 7
+									}
+								}
+							},
+							{
+								"key": "minecraft:spider_poison_hard",
+								"is_minified": true,
+								"children": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 15
+									}
+								}
+							},
+							{
+								"open": {
+									"minecraft:spider_jockey": {
+										"minecraft:addrider": {
+											"entity_type": "minecraft:skeleton"
+										},
+										"minecraft:rideable": {
+											"seat_count": 1,
+											"family_types": [
+												"skeleton"
+											],
+											"seats": {
+												"position": [
+													0,
+													0.3,
+													-0.1
+												]
+											}
+										}
+									},
+									"minecraft:spider_stray_jockey": {
+										"minecraft:addrider": {
+											"entity_type": "minecraft:skeleton.stray"
+										},
+										"minecraft:rideable": {
+											"seat_count": 1,
+											"family_types": [
+												"skeleton"
+											],
+											"seats": {
+												"position": [
+													0,
+													0.3,
+													-0.1
+												]
+											}
+										}
+									},
+									"minecraft:spider_wither_jockey": {
+										"minecraft:addrider": {
+											"entity_type": "minecraft:skeleton.wither"
+										},
+										"minecraft:rideable": {
+											"seat_count": 1,
+											"family_types": [
+												"skeleton"
+											],
+											"seats": {
+												"position": [
+													0,
+													0.25,
+													-0.1
+												]
+											}
+										}
+									},
+									"minecraft:spider_neutral": {
+										"minecraft:environment_sensor": {
+											"triggers": {
+												"filters": {
+													"test": "is_brightness",
+													"operator": "<",
+													"value": 0.49
+												},
+												"event": "minecraft:become_hostile"
+											}
+										},
+										"minecraft:on_target_acquired": {
+											"event": "minecraft:become_angry"
+										}
+									},
+									"minecraft:spider_hostile": {
+										"minecraft:environment_sensor": {
+											"triggers": {
+												"filters": {
+													"test": "is_brightness",
+													"operator": ">",
+													"value": 0.49
+												},
+												"event": "minecraft:become_neutral"
+											}
+										},
+										"minecraft:behavior.nearest_attackable_target": {
+											"priority": 2,
+											"must_see": true,
+											"attack_interval": 5,
+											"entity_types": [
+												{
+													"filters": {
+														"any_of": [
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "player"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "snowgolem"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "irongolem"
+															}
+														]
+													},
+													"max_dist": 16
+												}
+											]
+										},
+										"minecraft:behavior.leap_at_target": {
+											"priority": 4,
+											"yd": 0.4,
+											"must_be_on_ground": false
+										},
+										"minecraft:behavior.melee_attack": {
+											"priority": 3,
+											"track_target": true,
+											"random_stop_interval": 100,
+											"reach_multiplier": 0.8
+										}
+									},
+									"minecraft:spider_angry": {
+										"minecraft:angry": {
+											"duration": 10,
+											"duration_delta": 3,
+											"calm_event": {
+												"event": "minecraft:on_calm",
+												"target": "self"
+											}
+										},
+										"minecraft:behavior.nearest_attackable_target": {
+											"priority": 2,
+											"must_see": true,
+											"attack_interval": 10,
+											"entity_types": [
+												{
+													"filters": {
+														"any_of": [
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "player"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "snowgolem"
+															},
+															{
+																"test": "is_family",
+																"subject": "other",
+																"value": "irongolem"
+															}
+														]
+													},
+													"max_dist": 16
+												}
+											]
+										},
+										"minecraft:behavior.leap_at_target": {
+											"priority": 4,
+											"yd": 0.4,
+											"must_be_on_ground": false
+										},
+										"minecraft:behavior.melee_attack": {
+											"priority": 3,
+											"track_target": true,
+											"reach_multiplier": 1.4
+										}
+									},
+									"minecraft:spider_poison_easy": {
+										"minecraft:attack": {
+											"damage": 2,
+											"effect_name": "poison",
+											"effect_duration": 0
+										}
+									},
+									"minecraft:spider_poison_normal": {
+										"minecraft:attack": {
+											"damage": 2,
+											"effect_name": "poison",
+											"effect_duration": 7
+										}
+									},
+									"minecraft:spider_poison_hard": {
+										"minecraft:attack": {
+											"damage": 2,
+											"effect_name": "poison",
+											"effect_duration": 15
+										}
+									},
+									"despawn": {
+										"minecraft:instant_despawn": {}
+									}
+								},
+								"key": "despawn",
+								"is_minified": true,
+								"children": {
+									"minecraft:instant_despawn": {}
+								}
+							}
+						]
+					},
+					{
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:is_hidden_when_invisible": {},
+							"minecraft:experience_reward": {
+								"on_death": "query.last_hit_by_player ? 5 : 0"
+							},
+							"minecraft:type_family": {
+								"family": [
+									"cavespider",
+									"monster",
+									"arthropod",
+									"mob"
+								]
+							},
+							"minecraft:breathable": {
+								"total_supply": 15,
+								"suffocate_time": 0
+							},
+							"minecraft:nameable": {},
+							"minecraft:loot": {
+								"table": "loot_tables/entities/spider.json"
+							},
+							"minecraft:collision_box": {
+								"width": 0.7,
+								"height": 0.5
+							},
+							"minecraft:health": {
+								"value": 12,
+								"max": 12
+							},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"cause": "lava",
+										"damage_per_tick": 4
+									}
+								]
+							},
+							"minecraft:movement": {
+								"value": 0.3
+							},
+							"minecraft:navigation.climb": {
+								"can_path_over_water": true
+							},
+							"minecraft:movement.basic": {},
+							"minecraft:jump.static": {},
+							"minecraft:can_climb": {},
+							"minecraft:despawn": {
+								"despawn_from_distance": {}
+							},
+							"minecraft:behavior.float": {
+								"priority": 1
+							},
+							"minecraft:behavior.mount_pathing": {
+								"priority": 5,
+								"speed_multiplier": 1.25,
+								"target_dist": 0,
+								"track_target": true
+							},
+							"minecraft:behavior.random_stroll": {
+								"priority": 6,
+								"speed_multiplier": 0.8
+							},
+							"minecraft:behavior.look_at_player": {
+								"priority": 7,
+								"look_distance": 6,
+								"probability": 0.02
+							},
+							"minecraft:behavior.random_look_around": {
+								"priority": 7
+							},
+							"minecraft:behavior.hurt_by_target": {
+								"priority": 1
+							},
+							"minecraft:rideable": {
+								"seat_count": 1,
+								"family_types": [
+									"zombie"
+								],
+								"seats": {
+									"position": [
+										0,
+										0.3,
+										0
+									]
+								}
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:cave_spider",
+								"is_spawnable": true,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"minecraft:spider_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_stray_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.stray"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.3,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_wither_jockey": {
+									"minecraft:addrider": {
+										"entity_type": "minecraft:skeleton.wither"
+									},
+									"minecraft:rideable": {
+										"seat_count": 1,
+										"family_types": [
+											"skeleton"
+										],
+										"seats": {
+											"position": [
+												0,
+												0.25,
+												-0.1
+											]
+										}
+									}
+								},
+								"minecraft:spider_neutral": {
+									"minecraft:environment_sensor": {
+										"triggers": {
+											"filters": {
+												"test": "is_brightness",
+												"operator": "<",
+												"value": 0.49
+											},
+											"event": "minecraft:become_hostile"
+										}
+									},
+									"minecraft:on_target_acquired": {
+										"event": "minecraft:become_angry"
+									}
+								},
+								"minecraft:spider_hostile": {
+									"minecraft:environment_sensor": {
+										"triggers": {
+											"filters": {
+												"test": "is_brightness",
+												"operator": ">",
+												"value": 0.49
+											},
+											"event": "minecraft:become_neutral"
+										}
+									},
+									"minecraft:behavior.nearest_attackable_target": {
+										"priority": 2,
+										"must_see": true,
+										"attack_interval": 5,
+										"entity_types": [
+											{
+												"filters": {
+													"any_of": [
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "player"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "snowgolem"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "irongolem"
+														}
+													]
+												},
+												"max_dist": 16
+											}
+										]
+									},
+									"minecraft:behavior.leap_at_target": {
+										"priority": 4,
+										"yd": 0.4,
+										"must_be_on_ground": false
+									},
+									"minecraft:behavior.melee_attack": {
+										"priority": 3,
+										"track_target": true,
+										"random_stop_interval": 100,
+										"reach_multiplier": 0.8
+									}
+								},
+								"minecraft:spider_angry": {
+									"minecraft:angry": {
+										"duration": 10,
+										"duration_delta": 3,
+										"calm_event": {
+											"event": "minecraft:on_calm",
+											"target": "self"
+										}
+									},
+									"minecraft:behavior.nearest_attackable_target": {
+										"priority": 2,
+										"must_see": true,
+										"attack_interval": 10,
+										"entity_types": [
+											{
+												"filters": {
+													"any_of": [
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "player"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "snowgolem"
+														},
+														{
+															"test": "is_family",
+															"subject": "other",
+															"value": "irongolem"
+														}
+													]
+												},
+												"max_dist": 16
+											}
+										]
+									},
+									"minecraft:behavior.leap_at_target": {
+										"priority": 4,
+										"yd": 0.4,
+										"must_be_on_ground": false
+									},
+									"minecraft:behavior.melee_attack": {
+										"priority": 3,
+										"track_target": true,
+										"reach_multiplier": 1.4
+									}
+								},
+								"minecraft:spider_poison_easy": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 0
+									}
+								},
+								"minecraft:spider_poison_normal": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 7
+									}
+								},
+								"minecraft:spider_poison_hard": {
+									"minecraft:attack": {
+										"damage": 2,
+										"effect_name": "poison",
+										"effect_duration": 15
+									}
+								},
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:is_hidden_when_invisible": {},
+								"minecraft:experience_reward": {
+									"on_death": "query.last_hit_by_player ? 5 : 0"
+								},
+								"minecraft:type_family": {
+									"family": [
+										"cavespider",
+										"monster",
+										"arthropod",
+										"mob"
+									]
+								},
+								"minecraft:breathable": {
+									"total_supply": 15,
+									"suffocate_time": 0
+								},
+								"minecraft:nameable": {},
+								"minecraft:loot": {
+									"table": "loot_tables/entities/spider.json"
+								},
+								"minecraft:collision_box": {
+									"width": 0.7,
+									"height": 0.5
+								},
+								"minecraft:health": {
+									"value": 12,
+									"max": 12
+								},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"test": "in_lava",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"cause": "lava",
+											"damage_per_tick": 4
+										}
+									]
+								},
+								"minecraft:movement": {
+									"value": 0.3
+								},
+								"minecraft:navigation.climb": {
+									"can_path_over_water": true
+								},
+								"minecraft:movement.basic": {},
+								"minecraft:jump.static": {},
+								"minecraft:can_climb": {},
+								"minecraft:despawn": {
+									"despawn_from_distance": {}
+								},
+								"minecraft:behavior.float": {
+									"priority": 1
+								},
+								"minecraft:behavior.mount_pathing": {
+									"priority": 5,
+									"speed_multiplier": 1.25,
+									"target_dist": 0,
+									"track_target": true
+								},
+								"minecraft:behavior.random_stroll": {
+									"priority": 6,
+									"speed_multiplier": 0.8
+								},
+								"minecraft:behavior.look_at_player": {
+									"priority": 7,
+									"look_distance": 6,
+									"probability": 0.02
+								},
+								"minecraft:behavior.random_look_around": {
+									"priority": 7
+								},
+								"minecraft:behavior.hurt_by_target": {
+									"priority": 1
+								},
+								"minecraft:rideable": {
+									"seat_count": 1,
+									"family_types": [
+										"zombie"
+									],
+									"seats": {
+										"position": [
+											0,
+											0.3,
+											0
+										]
+									}
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"minecraft:entity_spawned": {
+									"randomize": [
+										{
+											"weight": 1,
+											"randomize": [
+												{
+													"weight": 80,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_snow_covered",
+																"value": true
+															},
+															{
+																"test": "is_underground",
+																"value": false
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_stray_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 80,
+													"filters": {
+														"test": "is_biome",
+														"value": "the_nether"
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_wither_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 20,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_underground",
+																"value": true
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												}
+											]
+										},
+										{
+											"weight": 99,
+											"remove": {},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:become_hostile": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_hostile"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:become_neutral": {
+									"remove": {
+										"component_groups": [
+											"minecraft:spider_hostile"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:spider_neutral"
+										]
+									}
+								},
+								"minecraft:become_angry": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_angry"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								},
+								"minecraft:on_calm": {
+									"remove": {
+										"component_groups": [
+											"minecraft:spider_angry"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:spider_neutral"
+										]
+									}
+								},
+								"despawn_cave_spider": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "events",
+						"children": [
+							{
+								"key": "minecraft:entity_spawned",
+								"is_minified": true,
+								"children": {
+									"randomize": [
+										{
+											"weight": 1,
+											"randomize": [
+												{
+													"weight": 80,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_snow_covered",
+																"value": true
+															},
+															{
+																"test": "is_underground",
+																"value": false
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_stray_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 80,
+													"filters": {
+														"test": "is_biome",
+														"value": "the_nether"
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_wither_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												},
+												{
+													"weight": 20,
+													"filters": {
+														"all_of": [
+															{
+																"test": "is_daytime",
+																"value": false
+															},
+															{
+																"test": "is_underground",
+																"value": true
+															}
+														]
+													},
+													"remove": {},
+													"add": {
+														"component_groups": [
+															"minecraft:spider_jockey",
+															"minecraft:spider_neutral"
+														]
+													}
+												}
+											]
+										},
+										{
+											"weight": 99,
+											"remove": {},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "minecraft:become_hostile",
+								"is_minified": true,
+								"children": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_hostile"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "minecraft:become_neutral",
+								"is_minified": true,
+								"children": {
+									"remove": {
+										"component_groups": [
+											"minecraft:spider_hostile"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:spider_neutral"
+										]
+									}
+								}
+							},
+							{
+								"key": "minecraft:become_angry",
+								"is_minified": true,
+								"children": {
+									"sequence": [
+										{
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_angry"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "easy"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_hard",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_easy"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "normal"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_hard"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_normal"
+												]
+											}
+										},
+										{
+											"filters": {
+												"test": "is_difficulty",
+												"value": "hard"
+											},
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_poison_easy",
+													"minecraft:spider_poison_normal"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_poison_hard"
+												]
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "minecraft:on_calm",
+								"children": [
+									{
+										"open": {
+											"remove": {
+												"component_groups": [
+													"minecraft:spider_angry"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:spider_neutral"
+												]
+											}
+										},
+										"key": "remove",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"minecraft:spider_angry"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"minecraft:spider_angry"
+												]
+											}
+										]
+									},
+									{
+										"key": "add",
+										"is_minified": true,
+										"children": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"randomize": [
+											{
+												"weight": 1,
+												"randomize": [
+													{
+														"weight": 80,
+														"filters": {
+															"all_of": [
+																{
+																	"test": "is_daytime",
+																	"value": false
+																},
+																{
+																	"test": "is_snow_covered",
+																	"value": true
+																},
+																{
+																	"test": "is_underground",
+																	"value": false
+																}
+															]
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_stray_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													},
+													{
+														"weight": 80,
+														"filters": {
+															"test": "is_biome",
+															"value": "the_nether"
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_wither_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													},
+													{
+														"weight": 20,
+														"filters": {
+															"all_of": [
+																{
+																	"test": "is_daytime",
+																	"value": false
+																},
+																{
+																	"test": "is_underground",
+																	"value": true
+																}
+															]
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													}
+												]
+											},
+											{
+												"weight": 99,
+												"remove": {},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:become_hostile": {
+										"sequence": [
+											{
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_hostile"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "easy"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_hard",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_easy"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "normal"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_hard"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_normal"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "hard"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_hard"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:become_neutral": {
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_hostile"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									},
+									"minecraft:become_angry": {
+										"sequence": [
+											{
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_angry"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "easy"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_hard",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_easy"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "normal"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_hard"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_normal"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "hard"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_hard"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:on_calm": {
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_angry"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									},
+									"despawn_cave_spider": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_cave_spider",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"randomize": [
+											{
+												"weight": 1,
+												"randomize": [
+													{
+														"weight": 80,
+														"filters": {
+															"all_of": [
+																{
+																	"test": "is_daytime",
+																	"value": false
+																},
+																{
+																	"test": "is_snow_covered",
+																	"value": true
+																},
+																{
+																	"test": "is_underground",
+																	"value": false
+																}
+															]
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_stray_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													},
+													{
+														"weight": 80,
+														"filters": {
+															"test": "is_biome",
+															"value": "the_nether"
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_wither_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													},
+													{
+														"weight": 20,
+														"filters": {
+															"all_of": [
+																{
+																	"test": "is_daytime",
+																	"value": false
+																},
+																{
+																	"test": "is_underground",
+																	"value": true
+																}
+															]
+														},
+														"remove": {},
+														"add": {
+															"component_groups": [
+																"minecraft:spider_jockey",
+																"minecraft:spider_neutral"
+															]
+														}
+													}
+												]
+											},
+											{
+												"weight": 99,
+												"remove": {},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:become_hostile": {
+										"sequence": [
+											{
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_hostile"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "easy"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_hard",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_easy"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "normal"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_hard"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_normal"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "hard"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_hard"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:become_neutral": {
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_hostile"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									},
+									"minecraft:become_angry": {
+										"sequence": [
+											{
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_neutral"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_angry"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "easy"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_hard",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_easy"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "normal"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_hard"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_normal"
+													]
+												}
+											},
+											{
+												"filters": {
+													"test": "is_difficulty",
+													"value": "hard"
+												},
+												"remove": {
+													"component_groups": [
+														"minecraft:spider_poison_easy",
+														"minecraft:spider_poison_normal"
+													]
+												},
+												"add": {
+													"component_groups": [
+														"minecraft:spider_poison_hard"
+													]
+												}
+											}
+										]
+									},
+									"minecraft:on_calm": {
+										"remove": {
+											"component_groups": [
+												"minecraft:spider_angry"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:spider_neutral"
+											]
+										}
+									},
+									"despawn_cave_spider": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_all_mobs",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,229 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:npc",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+					"bridge_execute_commands"
+				]
+			},
+			"animations": {
+				"bridge_execute_commands": "controller.animation.bridge_npc.execute_commands"
+			}
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"npc",
+					"mob"
+				]
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:movement": {
+				"value": 0.5
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 2.1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 0,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:persistent": {},
+			"minecraft:npc": {
+				"npc_data": {
+					"portrait_offsets": {
+						"translate": [
+							-7,
+							50,
+							0
+						],
+						"scale": [
+							1.75,
+							1.75,
+							1.75
+						]
+					},
+					"picker_offsets": {
+						"translate": [
+							0,
+							20,
+							0
+						],
+						"scale": [
+							1.7,
+							1.7,
+							1.7
+						]
+					},
+					"skin_list": [
+						{
+							"variant": 0
+						},
+						{
+							"variant": 1
+						},
+						{
+							"variant": 2
+						},
+						{
+							"variant": 3
+						},
+						{
+							"variant": 4
+						},
+						{
+							"variant": 5
+						},
+						{
+							"variant": 6
+						},
+						{
+							"variant": 7
+						},
+						{
+							"variant": 8
+						},
+						{
+							"variant": 9
+						},
+						{
+							"variant": 10
+						},
+						{
+							"variant": 11
+						},
+						{
+							"variant": 12
+						},
+						{
+							"variant": 13
+						},
+						{
+							"variant": 14
+						},
+						{
+							"variant": 15
+						},
+						{
+							"variant": 16
+						},
+						{
+							"variant": 17
+						},
+						{
+							"variant": 18
+						},
+						{
+							"variant": 19
+						}
+					]
+				}
+			},
+			"minecraft:nameable": {
+				"always_show": true,
+				"allow_name_tag_renaming": false
+			},
+			"minecraft:npc_dialogue": {
+				"scenes": [],
+				"scene_tag": "test",
+				"npc_name": "hi"
+			},
+			"npc_name": "hi",
+			"minecraft:physics": {},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:health": {
+				"max": 4,
+				"value": 7,
+				"min": 6
+			},
+			"minecraft:interact": {
+				"interactions": [
+					{
+						"on_interact": {
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_tag",
+										"operator": "!=",
+										"value": "listet"
+									},
+									{
+										"test": "has_equipment",
+										"operator": "!=",
+										"domain": "head",
+										"value": "minecraft:golden_helmet"
+									}
+								]
+							},
+							"event": "despawn_npc"
+						}
+					}
+				]
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"run_command": {
+					"command": [
+						"execute as@p[r=3,tag=admin] at @s run replaceitem entity @e[type=npc,r=3] slot.armor.head 0 golden_helmet",
+						"execute as@p[r=3,tag=admin] at @s run tag @e[type=npc,r=3] add listet"
+					]
+				}
+			},
+			"despawn_npcb": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_equipment",
+							"domain": "head",
+							"operator": "!=",
+							"value": "minecraft:golden_helmet"
+						},
+						"run_command": {
+							"command": [
+								"say h"
+							]
+						}
+					}
+				]
+			},
+			"despawn_npc": {
+				"trigger": "despawn_npcb",
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_tag",
+							"operator": "!=",
+							"value": "listet"
+						},
+						"run_command": {
+							"command": [
+								"execute as @s at @s run scoreboard players add @p npc_dead 1"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"despawn"
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}

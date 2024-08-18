@@ -1,0 +1,375 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\entities\\floating_text.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "38e83171_48b6_4446_a467_6b89d9b81299",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "da:floating_text",
+							"is_spawnable": false,
+							"is_summonable": true,
+							"is_experimental": false
+						},
+						"component_groups": {
+							"test": {
+								"minecraft:npc": {}
+							}
+						},
+						"components": {
+							"minecraft:type_family": {
+								"family": [
+									"floatingtext"
+								]
+							},
+							"minecraft:health": {
+								"value": 999999999,
+								"max": 999999999
+							},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.8
+							},
+							"minecraft:nameable": {
+								"alwaysShow": true,
+								"allowNameTagRenaming": true
+							},
+							"minecraft:damage_sensor": {
+								"triggers": {
+									"cause": "all",
+									"deals_damage": false
+								}
+							},
+							"minecraft:fire_immune": true,
+							"minecraft:scale": {
+								"value": 0
+							},
+							"minecraft:knockback_resistance": {
+								"value": 1
+							},
+							"minecraft:physics": {
+								"has_gravity": false
+							},
+							"minecraft:pushable": {
+								"is_pushable": false
+							}
+						},
+						"events": {
+							"on_not_download": {
+								"add": {
+									"component_groups": [
+										"test"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "da:floating_text",
+							"is_spawnable": false,
+							"is_summonable": true,
+							"is_experimental": false
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "da:floating_text",
+								"is_spawnable": false,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"test": {
+									"minecraft:npc": {}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"floatingtext"
+									]
+								},
+								"minecraft:health": {
+									"value": 999999999,
+									"max": 999999999
+								},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": true
+								},
+								"minecraft:damage_sensor": {
+									"triggers": {
+										"cause": "all",
+										"deals_damage": false
+									}
+								},
+								"minecraft:fire_immune": true,
+								"minecraft:scale": {
+									"value": 0
+								},
+								"minecraft:knockback_resistance": {
+									"value": 1
+								},
+								"minecraft:physics": {
+									"has_gravity": false
+								},
+								"minecraft:pushable": {
+									"is_pushable": false
+								}
+							},
+							"events": {
+								"on_not_download": {
+									"add": {
+										"component_groups": [
+											"test"
+										]
+									}
+								}
+							}
+						},
+						"key": "component_groups",
+						"children": [
+							{
+								"open": {
+									"test": {
+										"minecraft:npc": {}
+									}
+								},
+								"key": "test",
+								"is_minified": true,
+								"children": {
+									"minecraft:npc": {}
+								}
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "da:floating_text",
+								"is_spawnable": false,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"test": {
+									"minecraft:npc": {}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"floatingtext"
+									]
+								},
+								"minecraft:health": {
+									"value": 999999999,
+									"max": 999999999
+								},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": true
+								},
+								"minecraft:damage_sensor": {
+									"triggers": {
+										"cause": "all",
+										"deals_damage": false
+									}
+								},
+								"minecraft:fire_immune": true,
+								"minecraft:scale": {
+									"value": 0
+								},
+								"minecraft:knockback_resistance": {
+									"value": 1
+								},
+								"minecraft:physics": {
+									"has_gravity": false
+								},
+								"minecraft:pushable": {
+									"is_pushable": false
+								}
+							},
+							"events": {
+								"on_not_download": {
+									"add": {
+										"component_groups": [
+											"test"
+										]
+									}
+								}
+							}
+						},
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:type_family": {
+								"family": [
+									"floatingtext"
+								]
+							},
+							"minecraft:health": {
+								"value": 999999999,
+								"max": 999999999
+							},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.8
+							},
+							"minecraft:nameable": {
+								"alwaysShow": true,
+								"allowNameTagRenaming": true
+							},
+							"minecraft:damage_sensor": {
+								"triggers": {
+									"cause": "all",
+									"deals_damage": false
+								}
+							},
+							"minecraft:fire_immune": true,
+							"minecraft:scale": {
+								"value": 0
+							},
+							"minecraft:knockback_resistance": {
+								"value": 1
+							},
+							"minecraft:physics": {
+								"has_gravity": false
+							},
+							"minecraft:pushable": {
+								"is_pushable": false
+							}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "da:floating_text",
+								"is_spawnable": false,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"test": {
+									"minecraft:npc": {}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"floatingtext"
+									]
+								},
+								"minecraft:health": {
+									"value": 999999999,
+									"max": 999999999
+								},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": true
+								},
+								"minecraft:damage_sensor": {
+									"triggers": {
+										"cause": "all",
+										"deals_damage": false
+									}
+								},
+								"minecraft:fire_immune": true,
+								"minecraft:scale": {
+									"value": 0
+								},
+								"minecraft:knockback_resistance": {
+									"value": 1
+								},
+								"minecraft:physics": {
+									"has_gravity": false
+								},
+								"minecraft:pushable": {
+									"is_pushable": false
+								}
+							},
+							"events": {
+								"on_not_download": {
+									"add": {
+										"component_groups": [
+											"test"
+										]
+									}
+								}
+							}
+						},
+						"key": "events",
+						"children": [
+							{
+								"open": {
+									"on_not_download": {
+										"add": {
+											"component_groups": [
+												"test"
+											]
+										}
+									}
+								},
+								"key": "on_not_download",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"test"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"test"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"test"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

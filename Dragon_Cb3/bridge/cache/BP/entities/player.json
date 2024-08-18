@@ -1,0 +1,1967 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\entities\\player.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "d0b1853f_cbeb_40d4_87a5_6b1dd5c50e56",
+	"file_version": 18,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.17.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.17.0",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "minecraft:player",
+							"is_spawnable": false,
+							"is_summonable": false,
+							"is_experimental": false,
+							"animations": {
+								"digging": "controller.animation.digging",
+								"eating": "controller.animation.eating",
+								"gliding": "controller.animation.gliding",
+								"ground": "controller.animation.ground",
+								"jumping": "controller.animation.jumping",
+								"levitating": "controller.animation.levitating",
+								"moving": "controller.animation.moving",
+								"riding": "controller.animation.riding",
+								"swimming": "controller.animation.swimming",
+								"using_item": "controller.animation.using_item",
+								"sneaking": "controller.animation.sneaking"
+							},
+							"scripts": {
+								"animate": [
+									"digging",
+									"eating",
+									"gliding",
+									"ground",
+									"jumping",
+									"levitating",
+									"moving",
+									"riding",
+									"swimming",
+									"using_item",
+									"sneaking"
+								]
+							}
+						},
+						"component_groups": {
+							"c:standard_player": {
+								"minecraft:health": {
+									"value": 20,
+									"max": 20
+								},
+								"minecraft:scale": {
+									"value": 1
+								},
+								"minecraft:movement": {
+									"value": 0.1
+								},
+								"minecraft:attack": {
+									"damage": 1
+								}
+							},
+							"c:crash": {
+								"minecraft:transformation": {
+									"into": "minecraft:area_effect_cloud"
+								}
+							}
+						},
+						"components": {
+							"minecraft:type_family": {
+								"family": [
+									"player"
+								]
+							},
+							"minecraft:loot": {
+								"table": "loot_tables/empty.json"
+							},
+							"minecraft:can_climb": {},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.8
+							},
+							"minecraft:movement": {
+								"value": 0.1
+							},
+							"minecraft:environment_sensor": {
+								"triggers": [
+									{
+										"filters": {
+											"any_of": [
+												{
+													"test": "is_family",
+													"subject": "self",
+													"value": "c_standard"
+												}
+											]
+										},
+										"event": "c:reset_player"
+									},
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "has_tag",
+													"subject": "self",
+													"value": "unban"
+												}
+											]
+										},
+										"event": "c:unban"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:unknown"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:reserved6"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:movingblock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:movingBlock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:info_update"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:info_update2"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:invisibleBedrock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:invisiblebedrock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_tag",
+											"value": "admin",
+											"operator": "=="
+										},
+										"event": "test"
+									}
+								]
+							},
+							"minecraft:player.saturation": {
+								"value": 20
+							},
+							"minecraft:player.exhaustion": {
+								"value": 0,
+								"max": 4
+							},
+							"minecraft:player.level": {
+								"value": 0,
+								"max": 24791
+							},
+							"minecraft:player.experience": {
+								"value": 0,
+								"max": 1
+							},
+							"minecraft:breathable": {
+								"totalSupply": 15,
+								"suffocateTime": -1,
+								"inhaleTime": 3.75,
+								"generatesBubbles": false
+							},
+							"minecraft:nameable": {
+								"alwaysShow": true,
+								"allowNameTagRenaming": false
+							},
+							"minecraft:physics": {},
+							"minecraft:insomnia": {
+								"days_until_insomnia": 3
+							},
+							"minecraft:rideable": {
+								"seat_count": 2,
+								"family_types": [
+									"parrot_tame"
+								],
+								"pull_in_entities": true,
+								"seats": [
+									{
+										"position": [
+											0.4,
+											-0.15,
+											0.04
+										],
+										"min_rider_count": 0,
+										"max_rider_count": 0,
+										"lock_rider_rotation": 0
+									},
+									{
+										"position": [
+											-0.4,
+											-0.15,
+											0.04
+										],
+										"min_rider_count": 1,
+										"max_rider_count": 2,
+										"lock_rider_rotation": 0
+									}
+								]
+							},
+							"minecraft:scaffolding_climber": {},
+							"minecraft:npc": {},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "is_visible",
+													"value": false
+												},
+												{
+													"test": "has_tag",
+													"value": "supporter",
+													"operator": "!="
+												},
+												{
+													"test": "has_tag",
+													"value": "admin",
+													"operator": "!="
+												}
+											]
+										},
+										"damage_per_tick": 20
+									}
+								]
+							}
+						},
+						"events": {
+							"c:crash": {
+								"remove": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"c:crash"
+									]
+								}
+							},
+							"c:unban": {
+								"add": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"c:unban"
+									]
+								}
+							},
+							"c:reset_player": {
+								"add": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								},
+								"remove": {
+									"component_groups": [
+										"c:unban"
+									]
+								}
+							},
+							"ok": {
+								"run_command": {
+									"command": [
+										"say okfeghrtgrefgg"
+									]
+								}
+							},
+							"test": {
+								"run_command": {
+									"command": [
+										"gamerule functioncommandlimit 10000"
+									]
+								}
+							},
+							"cleard": {
+								"run_command": {
+									"command": [
+										"tag @s add hackingItem",
+										"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+										"tag @s add ban"
+									]
+								}
+							}
+						},
+						"minecraft:entity_spawned": {
+							"add": {
+								"component_groups": [
+									"c:standard_player"
+								]
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:player",
+							"is_spawnable": false,
+							"is_summonable": false,
+							"is_experimental": false,
+							"animations": {
+								"digging": "controller.animation.digging",
+								"eating": "controller.animation.eating",
+								"gliding": "controller.animation.gliding",
+								"ground": "controller.animation.ground",
+								"jumping": "controller.animation.jumping",
+								"levitating": "controller.animation.levitating",
+								"moving": "controller.animation.moving",
+								"riding": "controller.animation.riding",
+								"swimming": "controller.animation.swimming",
+								"using_item": "controller.animation.using_item",
+								"sneaking": "controller.animation.sneaking"
+							},
+							"scripts": {
+								"animate": [
+									"digging",
+									"eating",
+									"gliding",
+									"ground",
+									"jumping",
+									"levitating",
+									"moving",
+									"riding",
+									"swimming",
+									"using_item",
+									"sneaking"
+								]
+							}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:player",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false,
+								"animations": {
+									"digging": "controller.animation.digging",
+									"eating": "controller.animation.eating",
+									"gliding": "controller.animation.gliding",
+									"ground": "controller.animation.ground",
+									"jumping": "controller.animation.jumping",
+									"levitating": "controller.animation.levitating",
+									"moving": "controller.animation.moving",
+									"riding": "controller.animation.riding",
+									"swimming": "controller.animation.swimming",
+									"using_item": "controller.animation.using_item",
+									"sneaking": "controller.animation.sneaking"
+								},
+								"scripts": {
+									"animate": [
+										"digging",
+										"eating",
+										"gliding",
+										"ground",
+										"jumping",
+										"levitating",
+										"moving",
+										"riding",
+										"swimming",
+										"using_item",
+										"sneaking"
+									]
+								}
+							},
+							"component_groups": {
+								"c:standard_player": {
+									"minecraft:health": {
+										"value": 20,
+										"max": 20
+									},
+									"minecraft:scale": {
+										"value": 1
+									},
+									"minecraft:movement": {
+										"value": 0.1
+									},
+									"minecraft:attack": {
+										"damage": 1
+									}
+								},
+								"c:crash": {
+									"minecraft:transformation": {
+										"into": "minecraft:area_effect_cloud"
+									}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"player"
+									]
+								},
+								"minecraft:loot": {
+									"table": "loot_tables/empty.json"
+								},
+								"minecraft:can_climb": {},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:movement": {
+									"value": 0.1
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"any_of": [
+													{
+														"test": "is_family",
+														"subject": "self",
+														"value": "c_standard"
+													}
+												]
+											},
+											"event": "c:reset_player"
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "has_tag",
+														"subject": "self",
+														"value": "unban"
+													}
+												]
+											},
+											"event": "c:unban"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:unknown"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:reserved6"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingblock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingBlock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update2"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisibleBedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisiblebedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_tag",
+												"value": "admin",
+												"operator": "=="
+											},
+											"event": "test"
+										}
+									]
+								},
+								"minecraft:player.saturation": {
+									"value": 20
+								},
+								"minecraft:player.exhaustion": {
+									"value": 0,
+									"max": 4
+								},
+								"minecraft:player.level": {
+									"value": 0,
+									"max": 24791
+								},
+								"minecraft:player.experience": {
+									"value": 0,
+									"max": 1
+								},
+								"minecraft:breathable": {
+									"totalSupply": 15,
+									"suffocateTime": -1,
+									"inhaleTime": 3.75,
+									"generatesBubbles": false
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": false
+								},
+								"minecraft:physics": {},
+								"minecraft:insomnia": {
+									"days_until_insomnia": 3
+								},
+								"minecraft:rideable": {
+									"seat_count": 2,
+									"family_types": [
+										"parrot_tame"
+									],
+									"pull_in_entities": true,
+									"seats": [
+										{
+											"position": [
+												0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 0,
+											"max_rider_count": 0,
+											"lock_rider_rotation": 0
+										},
+										{
+											"position": [
+												-0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 1,
+											"max_rider_count": 2,
+											"lock_rider_rotation": 0
+										}
+									]
+								},
+								"minecraft:scaffolding_climber": {},
+								"minecraft:npc": {},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "is_visible",
+														"value": false
+													},
+													{
+														"test": "has_tag",
+														"value": "supporter",
+														"operator": "!="
+													},
+													{
+														"test": "has_tag",
+														"value": "admin",
+														"operator": "!="
+													}
+												]
+											},
+											"damage_per_tick": 20
+										}
+									]
+								}
+							},
+							"events": {
+								"c:crash": {
+									"remove": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"c:crash"
+										]
+									}
+								},
+								"c:unban": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"c:reset_player": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"ok": {
+									"run_command": {
+										"command": [
+											"say okfeghrtgrefgg"
+										]
+									}
+								},
+								"test": {
+									"run_command": {
+										"command": [
+											"gamerule functioncommandlimit 10000"
+										]
+									}
+								},
+								"cleard": {
+									"run_command": {
+										"command": [
+											"tag @s add hackingItem",
+											"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+											"tag @s add ban"
+										]
+									}
+								}
+							},
+							"minecraft:entity_spawned": {
+								"add": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								}
+							}
+						},
+						"key": "component_groups",
+						"children": [
+							{
+								"open": {
+									"c:standard_player": {
+										"minecraft:health": {
+											"value": 20,
+											"max": 20
+										},
+										"minecraft:scale": {
+											"value": 1
+										},
+										"minecraft:movement": {
+											"value": 0.1
+										},
+										"minecraft:attack": {
+											"damage": 1
+										}
+									},
+									"c:crash": {
+										"minecraft:transformation": {
+											"into": "minecraft:area_effect_cloud"
+										}
+									}
+								},
+								"key": "c:standard_player",
+								"children": [
+									{
+										"open": {
+											"minecraft:health": {
+												"value": 20,
+												"max": 20
+											},
+											"minecraft:scale": {
+												"value": 1
+											},
+											"minecraft:movement": {
+												"value": 0.1
+											},
+											"minecraft:attack": {
+												"damage": 1
+											}
+										},
+										"key": "minecraft:health",
+										"is_minified": true,
+										"children": {
+											"value": 20,
+											"max": 20
+										}
+									},
+									{
+										"key": "minecraft:scale",
+										"is_minified": true,
+										"children": {
+											"value": 1
+										}
+									},
+									{
+										"key": "minecraft:movement",
+										"is_minified": true,
+										"children": {
+											"value": 0.1
+										}
+									},
+									{
+										"key": "minecraft:attack",
+										"is_minified": true,
+										"children": {
+											"damage": 1
+										}
+									}
+								]
+							},
+							{
+								"open": {
+									"c:standard_player": {
+										"minecraft:health": {
+											"value": 20,
+											"max": 20
+										},
+										"minecraft:scale": {
+											"value": 1
+										},
+										"minecraft:movement": {
+											"value": 0.1
+										},
+										"minecraft:attack": {
+											"damage": 1
+										}
+									},
+									"c:crash": {
+										"minecraft:transformation": {
+											"into": "minecraft:area_effect_cloud"
+										}
+									}
+								},
+								"key": "c:crash",
+								"children": [
+									{
+										"open": {
+											"minecraft:transformation": {
+												"into": "minecraft:area_effect_cloud"
+											}
+										},
+										"key": "minecraft:transformation",
+										"is_minified": true,
+										"children": {
+											"into": "minecraft:area_effect_cloud"
+										}
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:player",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false,
+								"animations": {
+									"digging": "controller.animation.digging",
+									"eating": "controller.animation.eating",
+									"gliding": "controller.animation.gliding",
+									"ground": "controller.animation.ground",
+									"jumping": "controller.animation.jumping",
+									"levitating": "controller.animation.levitating",
+									"moving": "controller.animation.moving",
+									"riding": "controller.animation.riding",
+									"swimming": "controller.animation.swimming",
+									"using_item": "controller.animation.using_item",
+									"sneaking": "controller.animation.sneaking"
+								},
+								"scripts": {
+									"animate": [
+										"digging",
+										"eating",
+										"gliding",
+										"ground",
+										"jumping",
+										"levitating",
+										"moving",
+										"riding",
+										"swimming",
+										"using_item",
+										"sneaking"
+									]
+								}
+							},
+							"component_groups": {
+								"c:standard_player": {
+									"minecraft:health": {
+										"value": 20,
+										"max": 20
+									},
+									"minecraft:scale": {
+										"value": 1
+									},
+									"minecraft:movement": {
+										"value": 0.1
+									},
+									"minecraft:attack": {
+										"damage": 1
+									}
+								},
+								"c:crash": {
+									"minecraft:transformation": {
+										"into": "minecraft:area_effect_cloud"
+									}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"player"
+									]
+								},
+								"minecraft:loot": {
+									"table": "loot_tables/empty.json"
+								},
+								"minecraft:can_climb": {},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:movement": {
+									"value": 0.1
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"any_of": [
+													{
+														"test": "is_family",
+														"subject": "self",
+														"value": "c_standard"
+													}
+												]
+											},
+											"event": "c:reset_player"
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "has_tag",
+														"subject": "self",
+														"value": "unban"
+													}
+												]
+											},
+											"event": "c:unban"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:unknown"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:reserved6"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingblock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingBlock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update2"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisibleBedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisiblebedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_tag",
+												"value": "admin",
+												"operator": "=="
+											},
+											"event": "test"
+										}
+									]
+								},
+								"minecraft:player.saturation": {
+									"value": 20
+								},
+								"minecraft:player.exhaustion": {
+									"value": 0,
+									"max": 4
+								},
+								"minecraft:player.level": {
+									"value": 0,
+									"max": 24791
+								},
+								"minecraft:player.experience": {
+									"value": 0,
+									"max": 1
+								},
+								"minecraft:breathable": {
+									"totalSupply": 15,
+									"suffocateTime": -1,
+									"inhaleTime": 3.75,
+									"generatesBubbles": false
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": false
+								},
+								"minecraft:physics": {},
+								"minecraft:insomnia": {
+									"days_until_insomnia": 3
+								},
+								"minecraft:rideable": {
+									"seat_count": 2,
+									"family_types": [
+										"parrot_tame"
+									],
+									"pull_in_entities": true,
+									"seats": [
+										{
+											"position": [
+												0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 0,
+											"max_rider_count": 0,
+											"lock_rider_rotation": 0
+										},
+										{
+											"position": [
+												-0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 1,
+											"max_rider_count": 2,
+											"lock_rider_rotation": 0
+										}
+									]
+								},
+								"minecraft:scaffolding_climber": {},
+								"minecraft:npc": {},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "is_visible",
+														"value": false
+													},
+													{
+														"test": "has_tag",
+														"value": "supporter",
+														"operator": "!="
+													},
+													{
+														"test": "has_tag",
+														"value": "admin",
+														"operator": "!="
+													}
+												]
+											},
+											"damage_per_tick": 20
+										}
+									]
+								}
+							},
+							"events": {
+								"c:crash": {
+									"remove": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"c:crash"
+										]
+									}
+								},
+								"c:unban": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"c:reset_player": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"ok": {
+									"run_command": {
+										"command": [
+											"say okfeghrtgrefgg"
+										]
+									}
+								},
+								"test": {
+									"run_command": {
+										"command": [
+											"gamerule functioncommandlimit 10000"
+										]
+									}
+								},
+								"cleard": {
+									"run_command": {
+										"command": [
+											"tag @s add hackingItem",
+											"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+											"tag @s add ban"
+										]
+									}
+								}
+							},
+							"minecraft:entity_spawned": {
+								"add": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								}
+							}
+						},
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:type_family": {
+								"family": [
+									"player"
+								]
+							},
+							"minecraft:loot": {
+								"table": "loot_tables/empty.json"
+							},
+							"minecraft:can_climb": {},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.8
+							},
+							"minecraft:movement": {
+								"value": 0.1
+							},
+							"minecraft:environment_sensor": {
+								"triggers": [
+									{
+										"filters": {
+											"any_of": [
+												{
+													"test": "is_family",
+													"subject": "self",
+													"value": "c_standard"
+												}
+											]
+										},
+										"event": "c:reset_player"
+									},
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "has_tag",
+													"subject": "self",
+													"value": "unban"
+												}
+											]
+										},
+										"event": "c:unban"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:unknown"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:reserved6"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:movingblock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:movingBlock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:info_update"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:info_update2"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:invisibleBedrock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_equipment",
+											"domain": "hand",
+											"value": "minecraft:invisiblebedrock"
+										},
+										"event": "cleard"
+									},
+									{
+										"filters": {
+											"test": "has_tag",
+											"value": "admin",
+											"operator": "=="
+										},
+										"event": "test"
+									}
+								]
+							},
+							"minecraft:player.saturation": {
+								"value": 20
+							},
+							"minecraft:player.exhaustion": {
+								"value": 0,
+								"max": 4
+							},
+							"minecraft:player.level": {
+								"value": 0,
+								"max": 24791
+							},
+							"minecraft:player.experience": {
+								"value": 0,
+								"max": 1
+							},
+							"minecraft:breathable": {
+								"totalSupply": 15,
+								"suffocateTime": -1,
+								"inhaleTime": 3.75,
+								"generatesBubbles": false
+							},
+							"minecraft:nameable": {
+								"alwaysShow": true,
+								"allowNameTagRenaming": false
+							},
+							"minecraft:physics": {},
+							"minecraft:insomnia": {
+								"days_until_insomnia": 3
+							},
+							"minecraft:rideable": {
+								"seat_count": 2,
+								"family_types": [
+									"parrot_tame"
+								],
+								"pull_in_entities": true,
+								"seats": [
+									{
+										"position": [
+											0.4,
+											-0.15,
+											0.04
+										],
+										"min_rider_count": 0,
+										"max_rider_count": 0,
+										"lock_rider_rotation": 0
+									},
+									{
+										"position": [
+											-0.4,
+											-0.15,
+											0.04
+										],
+										"min_rider_count": 1,
+										"max_rider_count": 2,
+										"lock_rider_rotation": 0
+									}
+								]
+							},
+							"minecraft:scaffolding_climber": {},
+							"minecraft:npc": {},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "is_visible",
+													"value": false
+												},
+												{
+													"test": "has_tag",
+													"value": "supporter",
+													"operator": "!="
+												},
+												{
+													"test": "has_tag",
+													"value": "admin",
+													"operator": "!="
+												}
+											]
+										},
+										"damage_per_tick": 20
+									}
+								]
+							}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:player",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false,
+								"animations": {
+									"digging": "controller.animation.digging",
+									"eating": "controller.animation.eating",
+									"gliding": "controller.animation.gliding",
+									"ground": "controller.animation.ground",
+									"jumping": "controller.animation.jumping",
+									"levitating": "controller.animation.levitating",
+									"moving": "controller.animation.moving",
+									"riding": "controller.animation.riding",
+									"swimming": "controller.animation.swimming",
+									"using_item": "controller.animation.using_item",
+									"sneaking": "controller.animation.sneaking"
+								},
+								"scripts": {
+									"animate": [
+										"digging",
+										"eating",
+										"gliding",
+										"ground",
+										"jumping",
+										"levitating",
+										"moving",
+										"riding",
+										"swimming",
+										"using_item",
+										"sneaking"
+									]
+								}
+							},
+							"component_groups": {
+								"c:standard_player": {
+									"minecraft:health": {
+										"value": 20,
+										"max": 20
+									},
+									"minecraft:scale": {
+										"value": 1
+									},
+									"minecraft:movement": {
+										"value": 0.1
+									},
+									"minecraft:attack": {
+										"damage": 1
+									}
+								},
+								"c:crash": {
+									"minecraft:transformation": {
+										"into": "minecraft:area_effect_cloud"
+									}
+								}
+							},
+							"components": {
+								"minecraft:type_family": {
+									"family": [
+										"player"
+									]
+								},
+								"minecraft:loot": {
+									"table": "loot_tables/empty.json"
+								},
+								"minecraft:can_climb": {},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.8
+								},
+								"minecraft:movement": {
+									"value": 0.1
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"any_of": [
+													{
+														"test": "is_family",
+														"subject": "self",
+														"value": "c_standard"
+													}
+												]
+											},
+											"event": "c:reset_player"
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "has_tag",
+														"subject": "self",
+														"value": "unban"
+													}
+												]
+											},
+											"event": "c:unban"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:unknown"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:reserved6"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingblock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:movingBlock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:info_update2"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisibleBedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_equipment",
+												"domain": "hand",
+												"value": "minecraft:invisiblebedrock"
+											},
+											"event": "cleard"
+										},
+										{
+											"filters": {
+												"test": "has_tag",
+												"value": "admin",
+												"operator": "=="
+											},
+											"event": "test"
+										}
+									]
+								},
+								"minecraft:player.saturation": {
+									"value": 20
+								},
+								"minecraft:player.exhaustion": {
+									"value": 0,
+									"max": 4
+								},
+								"minecraft:player.level": {
+									"value": 0,
+									"max": 24791
+								},
+								"minecraft:player.experience": {
+									"value": 0,
+									"max": 1
+								},
+								"minecraft:breathable": {
+									"totalSupply": 15,
+									"suffocateTime": -1,
+									"inhaleTime": 3.75,
+									"generatesBubbles": false
+								},
+								"minecraft:nameable": {
+									"alwaysShow": true,
+									"allowNameTagRenaming": false
+								},
+								"minecraft:physics": {},
+								"minecraft:insomnia": {
+									"days_until_insomnia": 3
+								},
+								"minecraft:rideable": {
+									"seat_count": 2,
+									"family_types": [
+										"parrot_tame"
+									],
+									"pull_in_entities": true,
+									"seats": [
+										{
+											"position": [
+												0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 0,
+											"max_rider_count": 0,
+											"lock_rider_rotation": 0
+										},
+										{
+											"position": [
+												-0.4,
+												-0.15,
+												0.04
+											],
+											"min_rider_count": 1,
+											"max_rider_count": 2,
+											"lock_rider_rotation": 0
+										}
+									]
+								},
+								"minecraft:scaffolding_climber": {},
+								"minecraft:npc": {},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "is_visible",
+														"value": false
+													},
+													{
+														"test": "has_tag",
+														"value": "supporter",
+														"operator": "!="
+													},
+													{
+														"test": "has_tag",
+														"value": "admin",
+														"operator": "!="
+													}
+												]
+											},
+											"damage_per_tick": 20
+										}
+									]
+								}
+							},
+							"events": {
+								"c:crash": {
+									"remove": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"c:crash"
+										]
+									}
+								},
+								"c:unban": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"c:reset_player": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								},
+								"ok": {
+									"run_command": {
+										"command": [
+											"say okfeghrtgrefgg"
+										]
+									}
+								},
+								"test": {
+									"run_command": {
+										"command": [
+											"gamerule functioncommandlimit 10000"
+										]
+									}
+								},
+								"cleard": {
+									"run_command": {
+										"command": [
+											"tag @s add hackingItem",
+											"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+											"tag @s add ban"
+										]
+									}
+								}
+							},
+							"minecraft:entity_spawned": {
+								"add": {
+									"component_groups": [
+										"c:standard_player"
+									]
+								}
+							}
+						},
+						"key": "events",
+						"children": [
+							{
+								"open": {
+									"c:crash": {
+										"remove": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"c:crash"
+											]
+										}
+									},
+									"c:unban": {
+										"add": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"remove": {
+											"component_groups": [
+												"c:unban"
+											]
+										}
+									},
+									"c:reset_player": {
+										"add": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"remove": {
+											"component_groups": [
+												"c:unban"
+											]
+										}
+									},
+									"ok": {
+										"run_command": {
+											"command": [
+												"say okfeghrtgrefgg"
+											]
+										}
+									},
+									"test": {
+										"run_command": {
+											"command": [
+												"gamerule functioncommandlimit 10000"
+											]
+										}
+									},
+									"cleard": {
+										"run_command": {
+											"command": [
+												"tag @s add hackingItem",
+												"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+												"tag @s add ban"
+											]
+										}
+									}
+								},
+								"key": "c:crash",
+								"children": [
+									{
+										"open": {
+											"remove": {
+												"component_groups": [
+													"c:standard_player"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"c:crash"
+												]
+											}
+										},
+										"key": "remove",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"c:standard_player"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"c:standard_player"
+												]
+											}
+										]
+									},
+									{
+										"open": {
+											"remove": {
+												"component_groups": [
+													"c:standard_player"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"c:crash"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"c:crash"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"c:crash"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"key": "c:unban",
+								"is_minified": true,
+								"children": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								}
+							},
+							{
+								"open": {
+									"c:crash": {
+										"remove": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"c:crash"
+											]
+										}
+									},
+									"c:unban": {
+										"add": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"remove": {
+											"component_groups": [
+												"c:unban"
+											]
+										}
+									},
+									"c:reset_player": {
+										"add": {
+											"component_groups": [
+												"c:standard_player"
+											]
+										},
+										"remove": {
+											"component_groups": [
+												"c:unban"
+											]
+										}
+									},
+									"ok": {
+										"run_command": {
+											"command": [
+												"say okfeghrtgrefgg"
+											]
+										}
+									},
+									"test": {
+										"run_command": {
+											"command": [
+												"gamerule functioncommandlimit 10000"
+											]
+										}
+									},
+									"cleard": {
+										"run_command": {
+											"command": [
+												"tag @s add hackingItem",
+												"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+												"tag @s add ban"
+											]
+										}
+									}
+								},
+								"key": "c:reset_player",
+								"is_minified": true,
+								"children": {
+									"add": {
+										"component_groups": [
+											"c:standard_player"
+										]
+									},
+									"remove": {
+										"component_groups": [
+											"c:unban"
+										]
+									}
+								}
+							},
+							{
+								"key": "ok",
+								"is_minified": true,
+								"children": {
+									"run_command": {
+										"command": [
+											"say okfeghrtgrefgg"
+										]
+									}
+								}
+							},
+							{
+								"key": "test",
+								"is_minified": true,
+								"children": {
+									"run_command": {
+										"command": [
+											"gamerule functioncommandlimit 10000"
+										]
+									}
+								}
+							},
+							{
+								"key": "cleard",
+								"is_minified": true,
+								"children": {
+									"run_command": {
+										"command": [
+											"tag @s add hackingItem",
+											"tellraw @a[tag=admin] {\"rawtext\":[{\"text\":\"Der spieler §4§l§o\"},{\"selector\":\"@s\"},{\"text\":\" §rwurde wegen einen Illegalen Item gebant\"}]}",
+											"tag @s add ban"
+										]
+									}
+								}
+							}
+						]
+					},
+					{
+						"key": "minecraft:entity_spawned",
+						"is_minified": true,
+						"children": {
+							"add": {
+								"component_groups": [
+									"c:standard_player"
+								]
+							}
+						}
+					}
+				]
+			}
+		]
+	}
+}

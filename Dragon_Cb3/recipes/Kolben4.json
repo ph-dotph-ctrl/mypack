@@ -1,0 +1,37 @@
+//bridge-file-version: #0
+{
+	"format_version": 1.16,
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "minecraft:piston_from_mangrove_planks"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"AAA",
+			"BCB",
+			"BDB"
+		],
+		"key": {
+			"A": {
+				"item": "warped_planks"
+			},
+			"B": {
+				"item": "cobblestone"
+			},
+			"C": {
+				"item": "iron_ingot"
+			},
+			"D": {
+				"item": "redstone"
+			}
+		},
+		"result": [
+			{
+				"item": "minecraft:piston",
+				"count": 0
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "scene_tag": "ducky_intro",
+    "npc_name": "Ducky",
+    "text": "Hello. My name is Ducky. Take this gold!",
+    "on_open_commands": [
+        "/clear @p"
+    ],
+    "on_close_commands": [
+        "/say Enjoy the gold! "
+    ],
+    "buttons": [
+        {
+            "name": "Take Gold",
+            "commands": [
+                "/give @initiator gold_ingot"
+            ]
+        }
+    ]
+}

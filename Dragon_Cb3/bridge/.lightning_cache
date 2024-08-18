@@ -1,0 +1,124 @@
+{
+	"function": {
+		"9eba2990_d684_434c_a46a_188c004636e8": {},
+		"f8aab27e_4e8d_4686_9724_f71bc3f0d185": {},
+		"5dd3c321_c8ad_4905_ad7f_6ffddb27049a": {},
+		"1d2ee78d_b4bb_4e9b_97ca_b14c2f56a77b": {},
+		"56252969_16a7_4060_8728_13019dc701e9": {},
+		"d0b1853f_cbeb_40d4_87a5_6b1dd5c50e56": {
+			"tags": [
+				"hackingItem",
+				"ban"
+			]
+		},
+		"d2ec1816_d5c6_42a8_82ae_59bcc16cc91d": {},
+		"BP/functions/scoreboard.mcfunction": {
+			"custom_commands": [],
+			"scoreboards": [
+				"ban",
+				"otarj",
+				"otarj_save",
+				"npc_dead"
+			],
+			"tags": [
+				"crash",
+				"uncrash",
+				"ban"
+			]
+		},
+		"804fef74_4e5d_4657_a5ff_d0b7864724b4": {}
+	},
+	"animation_controller": {
+		"BP/animation_controllers/sneaking.json": {
+			"ids": [
+				"controller.animation.sneaking"
+			],
+			"custom_commands": []
+		},
+		"BP/animation_controllers/eating.json": {
+			"ids": [
+				"controller.animation.eating"
+			],
+			"custom_commands": []
+		},
+		"BP/animation_controllers/digging.json": {
+			"ids": [
+				"controller.animation.digging"
+			],
+			"custom_commands": []
+		},
+		"BP/animation_controllers/gliding.json": {
+			"ids": [
+				"controller.animation.gliding"
+			],
+			"custom_commands": []
+		},
+		"BP/animation_controllers/ground.json": {
+			"ids": [
+				"controller.animation.ground"
+			],
+			"custom_commands": []
+		},
+		"BP/animation_controllers/jumping.json": {
+			"ids": [
+				"controller.animation.jumping"
+			],
+			"custom_commands": []
+		}
+	},
+	"entity": {
+		"BP/entities/player.json": {
+			"events": [
+				"c:crash",
+				"c:unban",
+				"c:reset_player",
+				"ok",
+				"test",
+				"cleard"
+			],
+			"bridge_core_tags": [],
+			"identifiers": [
+				"minecraft:player"
+			],
+			"animation_references": [
+				"digging",
+				"eating",
+				"gliding",
+				"ground",
+				"jumping",
+				"levitating",
+				"moving",
+				"riding",
+				"swimming",
+				"using_item",
+				"sneaking"
+			],
+			"families": [
+				"player"
+			],
+			"custom_components": [],
+			"custom_commands": []
+		},
+		"BP/entities/agent.json": {
+			"events": [
+				"despawn_agent"
+			],
+			"bridge_core_tags": [],
+			"identifiers": [
+				"minecraft:agent"
+			],
+			"animation_references": [],
+			"families": [],
+			"custom_commands": [],
+			"custom_components": []
+		}
+	},
+	"item": {
+		"BP/items/chorusfrucht.json": {
+			"identifiers": [
+				"minecraft:chorus_fruit"
+			],
+			"custom_commands": []
+		}
+	}
+}

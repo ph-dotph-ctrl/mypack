@@ -1,0 +1,30 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.eating": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"scroll": "query.is_eating"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 4"
+					]
+				},
+				"scroll": {
+					"transitions": [
+						{
+							"default": "!query.is_eating"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 0"
+					]
+				}
+			}
+		}
+	}
+}

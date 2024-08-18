@@ -1,0 +1,28 @@
+//bridge-file-version: #1
+{
+	"format_version": 1.12,
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "minecraft:piston"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"S",
+			"P"
+		],
+		"key": {
+			"P": {
+				"item": "minecraft:piston"
+			},
+			"S": {
+				"item": "minecraft:slime"
+			}
+		},
+		"result": {
+			"item": "minecraft:dirt",
+			"count": 0
+		}
+	}
+}

@@ -1,0 +1,450 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\jknjb\\entity\\agent_test.json",
+	"file_type": "client_entity",
+	"format_version": 1,
+	"file_uuid": "30c6b24f_755a_408e_9461_dbf611524c7b",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"minecraft:client_entity": {
+						"description": {
+							"identifier": "minecraft:agent",
+							"materials": {
+								"default": "entity_alphatest"
+							},
+							"textures": {
+								"default": "textures/entity/agent"
+							},
+							"geometry": {
+								"default": "geometry.agent"
+							},
+							"scripts": {
+								"pre_animation": [
+									"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+									"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+									"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+								],
+								"animate": [
+									"move_controller",
+									"look_at_target"
+								]
+							},
+							"animations": {
+								"move": "animation.agent.move",
+								"look_at_target": "animation.common.look_at_target",
+								"swing_arms": "animation.agent.swing_arms",
+								"move_controller": "controller.animation.agent.move"
+							},
+							"render_controllers": [
+								"controller.render.agent"
+							],
+							"spawn_egg": {
+								"texture": "spawn_egg",
+								"texture_index": 52
+							}
+						}
+					}
+				},
+				"key": "minecraft:client_entity",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:agent",
+								"materials": {
+									"default": "entity_alphatest"
+								},
+								"textures": {
+									"default": "textures/entity/agent"
+								},
+								"geometry": {
+									"default": "geometry.agent"
+								},
+								"scripts": {
+									"pre_animation": [
+										"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+										"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+										"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+									],
+									"animate": [
+										"move_controller",
+										"look_at_target"
+									]
+								},
+								"animations": {
+									"move": "animation.agent.move",
+									"look_at_target": "animation.common.look_at_target",
+									"swing_arms": "animation.agent.swing_arms",
+									"move_controller": "controller.animation.agent.move"
+								},
+								"render_controllers": [
+									"controller.render.agent"
+								],
+								"spawn_egg": {
+									"texture": "spawn_egg",
+									"texture_index": 52
+								}
+							}
+						},
+						"key": "description",
+						"children": [
+							{
+								"data": "minecraft:agent",
+								"key": "identifier"
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "materials",
+								"is_minified": true,
+								"children": {
+									"default": "entity_alphatest"
+								}
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "textures",
+								"is_minified": true,
+								"children": {
+									"default": "textures/entity/agent"
+								}
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "geometry",
+								"is_minified": true,
+								"children": {
+									"default": "geometry.agent"
+								}
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "scripts",
+								"children": [
+									{
+										"open": {
+											"pre_animation": [
+												"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+												"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+												"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+											],
+											"animate": [
+												"move_controller",
+												"look_at_target"
+											]
+										},
+										"key": "pre_animation",
+										"is_minified": true,
+										"children": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										]
+									},
+									{
+										"open": {
+											"pre_animation": [
+												"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+												"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+												"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+											],
+											"animate": [
+												"move_controller",
+												"look_at_target"
+											]
+										},
+										"key": "animate",
+										"is_minified": true,
+										"children": [
+											"move_controller",
+											"look_at_target"
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "animations",
+								"is_minified": true,
+								"children": {
+									"move": "animation.agent.move",
+									"look_at_target": "animation.common.look_at_target",
+									"swing_arms": "animation.agent.swing_arms",
+									"move_controller": "controller.animation.agent.move"
+								}
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "render_controllers",
+								"is_minified": true,
+								"children": [
+									"controller.render.agent"
+								]
+							},
+							{
+								"open": {
+									"identifier": "minecraft:agent",
+									"materials": {
+										"default": "entity_alphatest"
+									},
+									"textures": {
+										"default": "textures/entity/agent"
+									},
+									"geometry": {
+										"default": "geometry.agent"
+									},
+									"scripts": {
+										"pre_animation": [
+											"variable.Agent.ArmZRotation = (Math.cos(query.life_time * 114.6) + 1.0) * 1.15;",
+											"variable.Agent.ArmXRotationFactor = Math.sin(query.life_time * 80.0) * 4.6;",
+											"variable.Agent.LegXRotationFactor = Math.sin(query.life_time * 46.0) * 1.15;"
+										],
+										"animate": [
+											"move_controller",
+											"look_at_target"
+										]
+									},
+									"animations": {
+										"move": "animation.agent.move",
+										"look_at_target": "animation.common.look_at_target",
+										"swing_arms": "animation.agent.swing_arms",
+										"move_controller": "controller.animation.agent.move"
+									},
+									"render_controllers": [
+										"controller.render.agent"
+									],
+									"spawn_egg": {
+										"texture": "spawn_egg",
+										"texture_index": 52
+									}
+								},
+								"key": "spawn_egg",
+								"is_minified": true,
+								"children": {
+									"texture": "spawn_egg",
+									"texture_index": 52
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

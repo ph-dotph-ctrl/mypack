@@ -1,0 +1,348 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\jknjb\\entity\\ggjhfh.json",
+	"file_type": "client_entity",
+	"format_version": 1,
+	"file_uuid": "3113ee54_9ee9_457b_b406_c71968d509bc",
+	"file_version": 23,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.8.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.8.0",
+					"minecraft:client_entity": {
+						"description": {
+							"identifier": "bridge:einweisung",
+							"materials": {
+								"default": "aether"
+							},
+							"textures": {
+								"default": "textures/entity/aether"
+							},
+							"geometry": {
+								"default": "geometry.dragonbase"
+							},
+							"animations": {
+								"fly": "animation.dragonbase.fly",
+								"mund": "animation.aether.tempt"
+							},
+							"animation_controllers": [
+								{
+									"fly": "controller.animation.eather.fly"
+								},
+								{
+									"mund": "controller.animation.eather.mund"
+								}
+							],
+							"render_controllers": [
+								"controller.render.ghast"
+							]
+						}
+					}
+				},
+				"key": "minecraft:client_entity",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "bridge:einweisung",
+								"materials": {
+									"default": "aether"
+								},
+								"textures": {
+									"default": "textures/entity/aether"
+								},
+								"geometry": {
+									"default": "geometry.dragonbase"
+								},
+								"animations": {
+									"fly": "animation.dragonbase.fly",
+									"mund": "animation.aether.tempt"
+								},
+								"animation_controllers": [
+									{
+										"fly": "controller.animation.eather.fly"
+									},
+									{
+										"mund": "controller.animation.eather.mund"
+									}
+								],
+								"render_controllers": [
+									"controller.render.ghast"
+								]
+							}
+						},
+						"key": "description",
+						"children": [
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"data": "bridge:einweisung",
+								"key": "identifier"
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "materials",
+								"is_minified": true,
+								"children": {
+									"default": "aether"
+								}
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "textures",
+								"is_minified": true,
+								"children": {
+									"default": "textures/entity/aether"
+								}
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "geometry",
+								"is_minified": true,
+								"children": {
+									"default": "geometry.dragonbase"
+								}
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "animations",
+								"is_minified": true,
+								"children": {
+									"fly": "animation.dragonbase.fly",
+									"mund": "animation.aether.tempt"
+								}
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "animation_controllers",
+								"children": [
+									{
+										"open": [
+											{
+												"fly": "controller.animation.eather.fly"
+											},
+											{
+												"mund": "controller.animation.eather.mund"
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"fly": "controller.animation.eather.fly"
+										}
+									},
+									{
+										"open": [
+											{
+												"fly": "controller.animation.eather.fly"
+											},
+											{
+												"mund": "controller.animation.eather.mund"
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"mund": "controller.animation.eather.mund"
+										}
+									}
+								]
+							},
+							{
+								"open": {
+									"identifier": "bridge:einweisung",
+									"materials": {
+										"default": "aether"
+									},
+									"textures": {
+										"default": "textures/entity/aether"
+									},
+									"geometry": {
+										"default": "geometry.dragonbase"
+									},
+									"animations": {
+										"fly": "animation.dragonbase.fly",
+										"mund": "animation.aether.tempt"
+									},
+									"animation_controllers": [
+										{
+											"fly": "controller.animation.eather.fly"
+										},
+										{
+											"mund": "controller.animation.eather.mund"
+										}
+									],
+									"render_controllers": [
+										"controller.render.ghast"
+									]
+								},
+								"key": "render_controllers",
+								"is_minified": true,
+								"children": [
+									"controller.render.ghast"
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

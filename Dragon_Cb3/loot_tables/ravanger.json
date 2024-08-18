@@ -1,0 +1,63 @@
+//bridge-file-version: #1
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "minecraft:saddle"
+				},
+				{
+					"type": "item",
+					"name": "minecraft:cooked_beef",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 1,
+								"max": 9
+							}
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "minecraft:wool",
+					"functions": [
+						{
+							"function": "set_count",
+							"count": {
+								"min": 5,
+								"max": 5
+							}
+						},
+						{
+							"function": "set_name",
+							"name": "hi t"
+						}
+					]
+				},
+				{
+					"type": "item",
+					"name": "minecraft:iron_sword",
+					"functions": [
+						{
+							"function": "specific_enchants",
+							"enchants": [
+								{
+									"id": "mending",
+									"level": 1
+								},
+								{
+									"id": "sharpness",
+									"level": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

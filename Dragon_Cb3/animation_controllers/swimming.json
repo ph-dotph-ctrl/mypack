@@ -1,0 +1,30 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"animation.player.swimming": {
+      			"states": {
+        			"default": {
+          				"transitions": [
+            					{
+              						"scroll": "query.is_swimming"
+            					}
+          				],
+          				"on_exit": [
+						"/say hi4"
+					]
+        			},
+        "			"scroll": {
+          				"transitions": [
+            					{
+              						"default": "!query.is_swimming"
+            					}
+          				],
+          				"on_exit": [
+						"/say hi5"
+					]
+        			}
+      			}
+    		}
+ 	}
+}

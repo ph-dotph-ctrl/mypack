@@ -1,0 +1,8 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\jknjb\\texts\\de_DE.lang",
+	"file_type": "client_lang",
+	"format_version": 0,
+	"file_uuid": "513c6b1e_bfde_4ae9_9801_d6f5d95c740d",
+	"file_version": 1,
+	"cache_content": "entity.bridge:einweisung.name=Einweisung\r\naction.hint.exit.bridge:einweisung=Einweisungs Drache"
+}

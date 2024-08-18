@@ -1,0 +1,215 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\animation_controllers\\gliding.json",
+	"file_type": "animation_controller",
+	"format_version": 1,
+	"file_uuid": "1d2ee78d_b4bb_4e9b_97ca_b14c2f56a77b",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"animation_controllers": {
+						"controller.animation.gliding": {
+							"states": {
+								"default": {
+									"transitions": [
+										{
+											"scroll": "query.is_gliding"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 5"
+									]
+								},
+								"scroll": {
+									"transitions": [
+										{
+											"default": "!query.is_gliding"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 0"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "animation_controllers",
+				"children": [
+					{
+						"open": {
+							"controller.animation.gliding": {
+								"states": {
+									"default": {
+										"transitions": [
+											{
+												"scroll": "query.is_gliding"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 5"
+										]
+									},
+									"scroll": {
+										"transitions": [
+											{
+												"default": "!query.is_gliding"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 0"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.gliding",
+						"children": [
+							{
+								"open": {
+									"states": {
+										"default": {
+											"transitions": [
+												{
+													"scroll": "query.is_gliding"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 5"
+											]
+										},
+										"scroll": {
+											"transitions": [
+												{
+													"default": "!query.is_gliding"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 0"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_gliding"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 5"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_gliding"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"scroll": "query.is_gliding"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"scroll": "query.is_gliding"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 5"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 5"
+												]
+											}
+										]
+									},
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_gliding"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 5"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_gliding"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "scroll",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"default": "!query.is_gliding"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"default": "!query.is_gliding"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 0"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

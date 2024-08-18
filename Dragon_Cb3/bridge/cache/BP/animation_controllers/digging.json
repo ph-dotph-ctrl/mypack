@@ -1,0 +1,215 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\animation_controllers\\digging.json",
+	"file_type": "animation_controller",
+	"format_version": 1,
+	"file_uuid": "5dd3c321_c8ad_4905_ad7f_6ffddb27049a",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"animation_controllers": {
+						"controller.animation.digging": {
+							"states": {
+								"default": {
+									"transitions": [
+										{
+											"scroll": "query.is_digging"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 3"
+									]
+								},
+								"scroll": {
+									"transitions": [
+										{
+											"default": "!query.is_digging"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 0"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "animation_controllers",
+				"children": [
+					{
+						"open": {
+							"controller.animation.digging": {
+								"states": {
+									"default": {
+										"transitions": [
+											{
+												"scroll": "query.is_digging"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 3"
+										]
+									},
+									"scroll": {
+										"transitions": [
+											{
+												"default": "!query.is_digging"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 0"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.digging",
+						"children": [
+							{
+								"open": {
+									"states": {
+										"default": {
+											"transitions": [
+												{
+													"scroll": "query.is_digging"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 3"
+											]
+										},
+										"scroll": {
+											"transitions": [
+												{
+													"default": "!query.is_digging"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 0"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_digging"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 3"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_digging"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"scroll": "query.is_digging"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"scroll": "query.is_digging"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 3"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 3"
+												]
+											}
+										]
+									},
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_digging"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 3"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_digging"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "scroll",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"default": "!query.is_digging"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"default": "!query.is_digging"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 0"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

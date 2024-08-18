@@ -1,0 +1,159 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\items\\chorusfrucht.json",
+	"file_type": "item",
+	"format_version": 1,
+	"file_uuid": "d2ec1816_d5c6_42a8_82ae_59bcc16cc91d",
+	"file_version": 9,
+	"cache_content": {
+		"children": [
+			{
+				"open": {
+					"format_version": 1.15,
+					"minecraft:item": {
+						"description": {
+							"identifier": "minecraft:chorus_fruit"
+						},
+						"components": {
+							"minecraft:use_duration": 32,
+							"minecraft:food": {
+								"nutrition": 4,
+								"saturation_modifier": "low",
+								"on_use_action": "none",
+								"on_use_range": [
+									8,
+									8,
+									8
+								],
+								"cooldown_type": "chorusfruit",
+								"cooldown_time": 20,
+								"can_always_eat": true
+							}
+						}
+					}
+				},
+				"data": "1.15",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": 1.15,
+					"minecraft:item": {
+						"description": {
+							"identifier": "minecraft:chorus_fruit"
+						},
+						"components": {
+							"minecraft:use_duration": 32,
+							"minecraft:food": {
+								"nutrition": 4,
+								"saturation_modifier": "low",
+								"on_use_action": "none",
+								"on_use_range": [
+									8,
+									8,
+									8
+								],
+								"cooldown_type": "chorusfruit",
+								"cooldown_time": 20,
+								"can_always_eat": true
+							}
+						}
+					}
+				},
+				"key": "minecraft:item",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:chorus_fruit"
+							},
+							"components": {
+								"minecraft:use_duration": 32,
+								"minecraft:food": {
+									"nutrition": 4,
+									"saturation_modifier": "low",
+									"on_use_action": "none",
+									"on_use_range": [
+										8,
+										8,
+										8
+									],
+									"cooldown_type": "chorusfruit",
+									"cooldown_time": 20,
+									"can_always_eat": true
+								}
+							}
+						},
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:chorus_fruit"
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:chorus_fruit"
+							},
+							"components": {
+								"minecraft:use_duration": 32,
+								"minecraft:food": {
+									"nutrition": 4,
+									"saturation_modifier": "low",
+									"on_use_action": "none",
+									"on_use_range": [
+										8,
+										8,
+										8
+									],
+									"cooldown_type": "chorusfruit",
+									"cooldown_time": 20,
+									"can_always_eat": true
+								}
+							}
+						},
+						"key": "components",
+						"children": [
+							{
+								"data": "32",
+								"key": "minecraft:use_duration"
+							},
+							{
+								"open": {
+									"minecraft:use_duration": 32,
+									"minecraft:food": {
+										"nutrition": 4,
+										"saturation_modifier": "low",
+										"on_use_action": "none",
+										"on_use_range": [
+											8,
+											8,
+											8
+										],
+										"cooldown_type": "chorusfruit",
+										"cooldown_time": 20,
+										"can_always_eat": true
+									}
+								},
+								"key": "minecraft:food",
+								"is_minified": true,
+								"children": {
+									"nutrition": 4,
+									"saturation_modifier": "low",
+									"on_use_action": "none",
+									"on_use_range": [
+										8,
+										8,
+										8
+									],
+									"cooldown_type": "chorusfruit",
+									"cooldown_time": 20,
+									"can_always_eat": true
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

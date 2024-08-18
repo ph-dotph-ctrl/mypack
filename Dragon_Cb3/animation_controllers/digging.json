@@ -1,0 +1,30 @@
+//bridge-file-version: #0
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.digging": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"scroll": "query.is_digging"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 3"
+					]
+				},
+				"scroll": {
+					"transitions": [
+						{
+							"default": "!query.is_digging"
+						}
+					],
+					"on_exit": [
+						"/scoreboard players set @s m11 0"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,570 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\fdg BP\\loot_tables\\ravanger.json",
+	"file_type": "loot_table",
+	"format_version": 1,
+	"file_uuid": "005d7555_2838_494a_8478_87a4120fe5e0",
+	"file_version": 4,
+	"cache_content": {
+		"children": [
+			{
+				"open": {
+					"pools": [
+						{
+							"entries": [
+								{
+									"type": "item",
+									"name": "minecraft:saddle",
+									"weight": 1
+								},
+								{
+									"type": "item",
+									"name": "minecraft:cooked_beef",
+									"functions": [
+										{
+											"function": "set_count",
+											"count": {
+												"min": 1,
+												"max": 9
+											}
+										}
+									],
+									"weight": 1
+								},
+								{
+									"type": "item",
+									"name": "minecraft:wool",
+									"functions": [
+										{
+											"function": "set_count",
+											"count": {
+												"min": 5,
+												"max": 5
+											}
+										},
+										{
+											"function": "set_name",
+											"name": "hi t"
+										}
+									],
+									"weight": 1
+								},
+								{
+									"type": "item",
+									"name": "minecraft:iron_sword",
+									"functions": [
+										{
+											"function": "specific_enchants",
+											"enchants": [
+												{
+													"id": "mending",
+													"level": 1
+												},
+												{
+													"id": "sharpness",
+													"level": 5
+												}
+											]
+										}
+									],
+									"weight": 1
+								}
+							]
+						}
+					]
+				},
+				"key": "pools",
+				"children": [
+					{
+						"open": [
+							{
+								"entries": [
+									{
+										"type": "item",
+										"name": "minecraft:saddle",
+										"weight": 1
+									},
+									{
+										"type": "item",
+										"name": "minecraft:cooked_beef",
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 1,
+													"max": 9
+												}
+											}
+										],
+										"weight": 1
+									},
+									{
+										"type": "item",
+										"name": "minecraft:wool",
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 5,
+													"max": 5
+												}
+											},
+											{
+												"function": "set_name",
+												"name": "hi t"
+											}
+										],
+										"weight": 1
+									},
+									{
+										"type": "item",
+										"name": "minecraft:iron_sword",
+										"functions": [
+											{
+												"function": "specific_enchants",
+												"enchants": [
+													{
+														"id": "mending",
+														"level": 1
+													},
+													{
+														"id": "sharpness",
+														"level": 5
+													}
+												]
+											}
+										],
+										"weight": 1
+									}
+								]
+							}
+						],
+						"children": [
+							{
+								"open": {
+									"entries": [
+										{
+											"type": "item",
+											"name": "minecraft:saddle",
+											"weight": 1
+										},
+										{
+											"type": "item",
+											"name": "minecraft:cooked_beef",
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 1,
+														"max": 9
+													}
+												}
+											],
+											"weight": 1
+										},
+										{
+											"type": "item",
+											"name": "minecraft:wool",
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 5,
+														"max": 5
+													}
+												},
+												{
+													"function": "set_name",
+													"name": "hi t"
+												}
+											],
+											"weight": 1
+										},
+										{
+											"type": "item",
+											"name": "minecraft:iron_sword",
+											"functions": [
+												{
+													"function": "specific_enchants",
+													"enchants": [
+														{
+															"id": "mending",
+															"level": 1
+														},
+														{
+															"id": "sharpness",
+															"level": 5
+														}
+													]
+												}
+											],
+											"weight": 1
+										}
+									]
+								},
+								"key": "entries",
+								"children": [
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "minecraft:saddle"
+											},
+											{
+												"type": "item",
+												"name": "minecraft:cooked_beef",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 1,
+															"max": 9
+														}
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:wool",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 5,
+															"max": 5
+														}
+													},
+													{
+														"function": "set_name",
+														"name": "hi t"
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:iron_sword",
+												"functions": [
+													{
+														"function": "specific_enchants",
+														"enchants": [
+															{
+																"id": "mending",
+																"level": 1
+															},
+															{
+																"id": "sharpness",
+																"level": 5
+															}
+														]
+													}
+												]
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"type": "item",
+											"name": "minecraft:saddle",
+											"weight": 1
+										}
+									},
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "minecraft:saddle"
+											},
+											{
+												"type": "item",
+												"name": "minecraft:cooked_beef",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 1,
+															"max": 9
+														}
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:wool",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 5,
+															"max": 5
+														}
+													},
+													{
+														"function": "set_name",
+														"name": "hi t"
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:iron_sword",
+												"functions": [
+													{
+														"function": "specific_enchants",
+														"enchants": [
+															{
+																"id": "mending",
+																"level": 1
+															},
+															{
+																"id": "sharpness",
+																"level": 5
+															}
+														]
+													}
+												]
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"type": "item",
+											"name": "minecraft:cooked_beef",
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 1,
+														"max": 9
+													}
+												}
+											],
+											"weight": 1
+										}
+									},
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "minecraft:saddle"
+											},
+											{
+												"type": "item",
+												"name": "minecraft:cooked_beef",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 1,
+															"max": 9
+														}
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:wool",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 5,
+															"max": 5
+														}
+													},
+													{
+														"function": "set_name",
+														"name": "hi t"
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:iron_sword",
+												"functions": [
+													{
+														"function": "specific_enchants",
+														"enchants": [
+															{
+																"id": "mending",
+																"level": 1
+															},
+															{
+																"id": "sharpness",
+																"level": 5
+															}
+														]
+													}
+												]
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"type": "item",
+											"name": "minecraft:wool",
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 5,
+														"max": 5
+													}
+												},
+												{
+													"function": "set_name",
+													"name": "hi t"
+												}
+											],
+											"weight": 1
+										}
+									},
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "minecraft:saddle"
+											},
+											{
+												"type": "item",
+												"name": "minecraft:cooked_beef",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 1,
+															"max": 9
+														}
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:wool",
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 5,
+															"max": 5
+														}
+													},
+													{
+														"function": "set_name",
+														"name": "hi t"
+													}
+												]
+											},
+											{
+												"type": "item",
+												"name": "minecraft:iron_sword",
+												"functions": [
+													{
+														"function": "specific_enchants",
+														"enchants": [
+															{
+																"id": "mending",
+																"level": 1
+															},
+															{
+																"id": "sharpness",
+																"level": 5
+															}
+														]
+													}
+												]
+											}
+										],
+										"children": [
+											{
+												"data": "item",
+												"key": "type"
+											},
+											{
+												"data": "minecraft:iron_sword",
+												"key": "name"
+											},
+											{
+												"open": {
+													"type": "item",
+													"name": "minecraft:iron_sword",
+													"functions": [
+														{
+															"function": "specific_enchants",
+															"enchants": [
+																{
+																	"id": "mending",
+																	"level": 1
+																},
+																{
+																	"id": "sharpness",
+																	"level": 5
+																}
+															]
+														}
+													]
+												},
+												"key": "functions",
+												"children": [
+													{
+														"open": [
+															{
+																"function": "specific_enchants",
+																"enchants": [
+																	{
+																		"id": "mending",
+																		"level": 1
+																	},
+																	{
+																		"id": "sharpness",
+																		"level": 5
+																	}
+																]
+															}
+														],
+														"children": [
+															{
+																"data": "specific_enchants",
+																"key": "function"
+															},
+															{
+																"open": {
+																	"function": "specific_enchants",
+																	"enchants": [
+																		{
+																			"id": "mending",
+																			"level": 1
+																		},
+																		{
+																			"id": "sharpness",
+																			"level": 5
+																		}
+																	]
+																},
+																"key": "enchants",
+																"is_minified": true,
+																"children": [
+																	{
+																		"id": "mending",
+																		"level": 1
+																	},
+																	{
+																		"id": "sharpness",
+																		"level": 5
+																	}
+																]
+															}
+														]
+													}
+												]
+											},
+											{
+												"data": "1",
+												"key": "weight"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

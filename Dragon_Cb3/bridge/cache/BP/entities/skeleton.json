@@ -1,0 +1,3545 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\entities\\skeleton.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "c7aa6e19_c43d_4bdf_87e1_48328ee62605",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.16.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.16.0",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "minecraft:skeleton",
+							"is_spawnable": true,
+							"is_summonable": true,
+							"is_experimental": false
+						},
+						"component_groups": {
+							"in_powder_snow": {
+								"minecraft:is_shaking": {},
+								"minecraft:timer": {
+									"looping": false,
+									"time": 20,
+									"time_down_event": {
+										"event": "become_stray_event"
+									}
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"test": "in_block",
+												"subject": "self",
+												"operator": "!=",
+												"value": "minecraft:powder_snow"
+											},
+											"event": "got_out_of_powder_snow"
+										}
+									]
+								}
+							},
+							"got_out_of_powder_snow_environment_sensor": {
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"test": "is_underwater",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "has_ranged_weapon",
+												"subject": "self",
+												"operator": "==",
+												"value": false
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "in_water",
+														"subject": "self",
+														"operator": "==",
+														"value": false
+													},
+													{
+														"test": "has_ranged_weapon",
+														"subject": "self",
+														"operator": "==",
+														"value": true
+													}
+												]
+											},
+											"event": "minecraft:ranged_mode"
+										}
+									]
+								}
+							},
+							"minecraft:lightning_immune": {
+								"minecraft:damage_sensor": {
+									"triggers": {
+										"on_damage": {
+											"filters": {
+												"other_with_families": "lightning"
+											}
+										},
+										"deals_damage": false
+									}
+								}
+							},
+							"become_stray": {
+								"minecraft:transformation": {
+									"into": "minecraft:stray",
+									"transformation_sound": "convert_to_stray",
+									"keep_level": true,
+									"drop_inventory": true,
+									"preserve_equipment": true
+								}
+							},
+							"minecraft:ranged_attack": {
+								"minecraft:behavior.ranged_attack": {
+									"priority": 0,
+									"attack_interval_min": 1,
+									"attack_interval_max": 3,
+									"attack_radius": 15
+								},
+								"minecraft:shooter": {
+									"def": "minecraft:arrow"
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"test": "is_underwater",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "has_ranged_weapon",
+												"subject": "self",
+												"operator": "==",
+												"value": false
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "in_block",
+												"subject": "self",
+												"operator": "==",
+												"value": "minecraft:powder_snow"
+											},
+											"event": "got_in_powder_snow"
+										}
+									]
+								}
+							},
+							"minecraft:melee_attack": {
+								"minecraft:behavior.melee_attack": {
+									"priority": 4,
+									"track_target": true,
+									"speed_multiplier": 1.25
+								},
+								"minecraft:attack": {
+									"damage": 3
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "in_water",
+														"subject": "self",
+														"operator": "==",
+														"value": false
+													},
+													{
+														"test": "has_ranged_weapon",
+														"subject": "self",
+														"operator": "==",
+														"value": true
+													}
+												]
+											},
+											"event": "minecraft:ranged_mode"
+										},
+										{
+											"filters": {
+												"test": "in_block",
+												"subject": "self",
+												"operator": "==",
+												"value": "minecraft:powder_snow"
+											},
+											"event": "got_in_powder_snow"
+										}
+									]
+								}
+							},
+							"despawn": {
+								"minecraft:instant_despawn": {}
+							}
+						},
+						"components": {
+							"minecraft:is_hidden_when_invisible": {},
+							"minecraft:experience_reward": {
+								"on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+							},
+							"minecraft:equip_item": {},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.9
+							},
+							"minecraft:type_family": {
+								"family": [
+									"skeleton",
+									"undead",
+									"monster",
+									"mob"
+								]
+							},
+							"minecraft:breathable": {
+								"total_supply": 15,
+								"suffocate_time": 0,
+								"breathes_water": true
+							},
+							"minecraft:burns_in_daylight": {},
+							"minecraft:health": {
+								"value": 20,
+								"max": 20
+							},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"cause": "lava",
+										"damage_per_tick": 4
+									}
+								]
+							},
+							"minecraft:loot": {
+								"table": "loot_tables/entities/skeleton.json"
+							},
+							"minecraft:movement": {
+								"value": 0.25
+							},
+							"minecraft:navigation.walk": {
+								"is_amphibious": true,
+								"avoid_sun": true,
+								"avoid_water": true
+							},
+							"minecraft:movement.basic": {},
+							"minecraft:jump.static": {},
+							"minecraft:can_climb": {},
+							"minecraft:nameable": {},
+							"minecraft:equipment": {
+								"table": "loot_tables/entities/skeleton_gear.json"
+							},
+							"minecraft:shooter": {
+								"def": "minecraft:arrow"
+							},
+							"minecraft:environment_sensor": {
+								"triggers": [
+									{
+										"filters": {
+											"test": "is_underwater",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"event": "minecraft:melee_mode"
+									},
+									{
+										"filters": {
+											"test": "has_ranged_weapon",
+											"subject": "self",
+											"operator": "==",
+											"value": false
+										},
+										"event": "minecraft:melee_mode"
+									},
+									{
+										"filters": {
+											"test": "in_block",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:powder_snow"
+										},
+										"event": "got_in_powder_snow"
+									}
+								]
+							},
+							"minecraft:despawn": {
+								"despawn_from_distance": {}
+							},
+							"minecraft:shareables": {
+								"items": [
+									{
+										"item": "minecraft:netherite_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:stone_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:wooden_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:bow",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 6
+									},
+									{
+										"item": "minecraft:netherite_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:turtle_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 6
+									},
+									{
+										"item": "minecraft:skull:0",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:skull:1",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:carved_pumpkin",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:netherite_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:netherite_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:netherite_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									}
+								]
+							},
+							"minecraft:behavior.ranged_attack": {
+								"priority": 0,
+								"attack_interval_min": 1,
+								"attack_interval_max": 3,
+								"attack_radius": 15
+							},
+							"minecraft:behavior.hurt_by_target": {
+								"priority": 1
+							},
+							"minecraft:behavior.nearest_attackable_target": {
+								"priority": 2,
+								"must_see": true,
+								"reselect_targets": true,
+								"entity_types": [
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										"max_dist": 16
+									},
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "irongolem"
+										},
+										"max_dist": 16
+									},
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "is_family",
+													"subject": "other",
+													"value": "baby_turtle"
+												},
+												{
+													"test": "in_water",
+													"subject": "other",
+													"operator": "!=",
+													"value": true
+												}
+											]
+										},
+										"max_dist": 16
+									}
+								]
+							},
+							"minecraft:behavior.flee_sun": {
+								"priority": 2,
+								"speed_multiplier": 1
+							},
+							"minecraft:behavior.equip_item": {
+								"priority": 3
+							},
+							"minecraft:behavior.avoid_mob_type": {
+								"priority": 4,
+								"entity_types": [
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "wolf"
+										},
+										"max_dist": 6,
+										"walk_speed_multiplier": 1.2,
+										"sprint_speed_multiplier": 1.2
+									}
+								]
+							},
+							"minecraft:behavior.pickup_items": {
+								"priority": 5,
+								"max_dist": 3,
+								"goal_radius": 2,
+								"speed_multiplier": 1,
+								"pickup_based_on_chance": true,
+								"can_pickup_any_item": true
+							},
+							"minecraft:behavior.random_stroll": {
+								"priority": 6,
+								"speed_multiplier": 1
+							},
+							"minecraft:behavior.look_at_player": {
+								"priority": 7,
+								"look_distance": 8
+							},
+							"minecraft:behavior.random_look_around": {
+								"priority": 8
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						},
+						"events": {
+							"minecraft:entity_spawned": {
+								"add": {
+									"component_groups": [
+										"minecraft:ranged_attack"
+									]
+								}
+							},
+							"become_stray_event": {
+								"add": {
+									"component_groups": [
+										"become_stray"
+									]
+								}
+							},
+							"got_in_powder_snow": {
+								"add": {
+									"component_groups": [
+										"in_powder_snow"
+									]
+								}
+							},
+							"got_out_of_powder_snow": {
+								"remove": {
+									"component_groups": [
+										"in_powder_snow"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"got_out_of_powder_snow_environment_sensor"
+									]
+								}
+							},
+							"minecraft:spring_trap": {
+								"add": {
+									"component_groups": [
+										"minecraft:lightning_immune"
+									]
+								}
+							},
+							"minecraft:melee_mode": {
+								"remove": {
+									"component_groups": [
+										"minecraft:ranged_attack",
+										"got_out_of_powder_snow_environment_sensor"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minecraft:melee_attack"
+									]
+								}
+							},
+							"minecraft:ranged_mode": {
+								"remove": {
+									"component_groups": [
+										"minecraft:melee_attack",
+										"got_out_of_powder_snow_environment_sensor"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"minecraft:ranged_attack"
+									]
+								}
+							},
+							"despawn_skeleton": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							},
+							"despawn_all_mobs": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:skeleton",
+							"is_spawnable": true,
+							"is_summonable": true,
+							"is_experimental": false
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:skeleton",
+								"is_spawnable": true,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"in_powder_snow": {
+									"minecraft:is_shaking": {},
+									"minecraft:timer": {
+										"looping": false,
+										"time": 20,
+										"time_down_event": {
+											"event": "become_stray_event"
+										}
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "!=",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_out_of_powder_snow"
+											}
+										]
+									}
+								},
+								"got_out_of_powder_snow_environment_sensor": {
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											}
+										]
+									}
+								},
+								"minecraft:lightning_immune": {
+									"minecraft:damage_sensor": {
+										"triggers": {
+											"on_damage": {
+												"filters": {
+													"other_with_families": "lightning"
+												}
+											},
+											"deals_damage": false
+										}
+									}
+								},
+								"become_stray": {
+									"minecraft:transformation": {
+										"into": "minecraft:stray",
+										"transformation_sound": "convert_to_stray",
+										"keep_level": true,
+										"drop_inventory": true,
+										"preserve_equipment": true
+									}
+								},
+								"minecraft:ranged_attack": {
+									"minecraft:behavior.ranged_attack": {
+										"priority": 0,
+										"attack_interval_min": 1,
+										"attack_interval_max": 3,
+										"attack_radius": 15
+									},
+									"minecraft:shooter": {
+										"def": "minecraft:arrow"
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								},
+								"minecraft:melee_attack": {
+									"minecraft:behavior.melee_attack": {
+										"priority": 4,
+										"track_target": true,
+										"speed_multiplier": 1.25
+									},
+									"minecraft:attack": {
+										"damage": 3
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								},
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:is_hidden_when_invisible": {},
+								"minecraft:experience_reward": {
+									"on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+								},
+								"minecraft:equip_item": {},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.9
+								},
+								"minecraft:type_family": {
+									"family": [
+										"skeleton",
+										"undead",
+										"monster",
+										"mob"
+									]
+								},
+								"minecraft:breathable": {
+									"total_supply": 15,
+									"suffocate_time": 0,
+									"breathes_water": true
+								},
+								"minecraft:burns_in_daylight": {},
+								"minecraft:health": {
+									"value": 20,
+									"max": 20
+								},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"test": "in_lava",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"cause": "lava",
+											"damage_per_tick": 4
+										}
+									]
+								},
+								"minecraft:loot": {
+									"table": "loot_tables/entities/skeleton.json"
+								},
+								"minecraft:movement": {
+									"value": 0.25
+								},
+								"minecraft:navigation.walk": {
+									"is_amphibious": true,
+									"avoid_sun": true,
+									"avoid_water": true
+								},
+								"minecraft:movement.basic": {},
+								"minecraft:jump.static": {},
+								"minecraft:can_climb": {},
+								"minecraft:nameable": {},
+								"minecraft:equipment": {
+									"table": "loot_tables/entities/skeleton_gear.json"
+								},
+								"minecraft:shooter": {
+									"def": "minecraft:arrow"
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"test": "is_underwater",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "has_ranged_weapon",
+												"subject": "self",
+												"operator": "==",
+												"value": false
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "in_block",
+												"subject": "self",
+												"operator": "==",
+												"value": "minecraft:powder_snow"
+											},
+											"event": "got_in_powder_snow"
+										}
+									]
+								},
+								"minecraft:despawn": {
+									"despawn_from_distance": {}
+								},
+								"minecraft:shareables": {
+									"items": [
+										{
+											"item": "minecraft:netherite_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:stone_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:wooden_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:bow",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 6
+										},
+										{
+											"item": "minecraft:netherite_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:turtle_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 6
+										},
+										{
+											"item": "minecraft:skull:0",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:skull:1",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:carved_pumpkin",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:netherite_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:netherite_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:netherite_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										}
+									]
+								},
+								"minecraft:behavior.ranged_attack": {
+									"priority": 0,
+									"attack_interval_min": 1,
+									"attack_interval_max": 3,
+									"attack_radius": 15
+								},
+								"minecraft:behavior.hurt_by_target": {
+									"priority": 1
+								},
+								"minecraft:behavior.nearest_attackable_target": {
+									"priority": 2,
+									"must_see": true,
+									"reselect_targets": true,
+									"entity_types": [
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											"max_dist": 16
+										},
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											},
+											"max_dist": 16
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "baby_turtle"
+													},
+													{
+														"test": "in_water",
+														"subject": "other",
+														"operator": "!=",
+														"value": true
+													}
+												]
+											},
+											"max_dist": 16
+										}
+									]
+								},
+								"minecraft:behavior.flee_sun": {
+									"priority": 2,
+									"speed_multiplier": 1
+								},
+								"minecraft:behavior.equip_item": {
+									"priority": 3
+								},
+								"minecraft:behavior.avoid_mob_type": {
+									"priority": 4,
+									"entity_types": [
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "wolf"
+											},
+											"max_dist": 6,
+											"walk_speed_multiplier": 1.2,
+											"sprint_speed_multiplier": 1.2
+										}
+									]
+								},
+								"minecraft:behavior.pickup_items": {
+									"priority": 5,
+									"max_dist": 3,
+									"goal_radius": 2,
+									"speed_multiplier": 1,
+									"pickup_based_on_chance": true,
+									"can_pickup_any_item": true
+								},
+								"minecraft:behavior.random_stroll": {
+									"priority": 6,
+									"speed_multiplier": 1
+								},
+								"minecraft:behavior.look_at_player": {
+									"priority": 7,
+									"look_distance": 8
+								},
+								"minecraft:behavior.random_look_around": {
+									"priority": 8
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"minecraft:entity_spawned": {
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								},
+								"become_stray_event": {
+									"add": {
+										"component_groups": [
+											"become_stray"
+										]
+									}
+								},
+								"got_in_powder_snow": {
+									"add": {
+										"component_groups": [
+											"in_powder_snow"
+										]
+									}
+								},
+								"got_out_of_powder_snow": {
+									"remove": {
+										"component_groups": [
+											"in_powder_snow"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									}
+								},
+								"minecraft:spring_trap": {
+									"add": {
+										"component_groups": [
+											"minecraft:lightning_immune"
+										]
+									}
+								},
+								"minecraft:melee_mode": {
+									"remove": {
+										"component_groups": [
+											"minecraft:ranged_attack",
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:melee_attack"
+										]
+									}
+								},
+								"minecraft:ranged_mode": {
+									"remove": {
+										"component_groups": [
+											"minecraft:melee_attack",
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								},
+								"despawn_skeleton": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "component_groups",
+						"children": [
+							{
+								"key": "in_powder_snow",
+								"is_minified": true,
+								"children": {
+									"minecraft:is_shaking": {},
+									"minecraft:timer": {
+										"looping": false,
+										"time": 20,
+										"time_down_event": {
+											"event": "become_stray_event"
+										}
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "!=",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_out_of_powder_snow"
+											}
+										]
+									}
+								}
+							},
+							{
+								"key": "got_out_of_powder_snow_environment_sensor",
+								"is_minified": true,
+								"children": {
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											}
+										]
+									}
+								}
+							},
+							{
+								"key": "minecraft:lightning_immune",
+								"children": [
+									{
+										"open": {
+											"minecraft:damage_sensor": {
+												"triggers": {
+													"on_damage": {
+														"filters": {
+															"other_with_families": "lightning"
+														}
+													},
+													"deals_damage": false
+												}
+											}
+										},
+										"key": "minecraft:damage_sensor",
+										"children": [
+											{
+												"open": {
+													"triggers": {
+														"on_damage": {
+															"filters": {
+																"other_with_families": "lightning"
+															}
+														},
+														"deals_damage": false
+													}
+												},
+												"key": "triggers",
+												"children": [
+													{
+														"open": {
+															"on_damage": {
+																"filters": {
+																	"other_with_families": "lightning"
+																}
+															},
+															"deals_damage": false
+														},
+														"key": "on_damage",
+														"children": [
+															{
+																"open": {
+																	"filters": {
+																		"other_with_families": "lightning"
+																	}
+																},
+																"key": "filters",
+																"is_minified": true,
+																"children": {
+																	"other_with_families": "lightning"
+																}
+															}
+														]
+													},
+													{
+														"open": {
+															"on_damage": {
+																"filters": {
+																	"other_with_families": "lightning"
+																}
+															},
+															"deals_damage": false
+														},
+														"data": "false",
+														"key": "deals_damage"
+													}
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"key": "become_stray",
+								"is_minified": true,
+								"children": {
+									"minecraft:transformation": {
+										"into": "minecraft:stray",
+										"transformation_sound": "convert_to_stray",
+										"keep_level": true,
+										"drop_inventory": true,
+										"preserve_equipment": true
+									}
+								}
+							},
+							{
+								"key": "minecraft:ranged_attack",
+								"is_minified": true,
+								"children": {
+									"minecraft:behavior.ranged_attack": {
+										"priority": 0,
+										"attack_interval_min": 1,
+										"attack_interval_max": 3,
+										"attack_radius": 15
+									},
+									"minecraft:shooter": {
+										"def": "minecraft:arrow"
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								}
+							},
+							{
+								"key": "minecraft:melee_attack",
+								"is_minified": true,
+								"children": {
+									"minecraft:behavior.melee_attack": {
+										"priority": 4,
+										"track_target": true,
+										"speed_multiplier": 1.25
+									},
+									"minecraft:attack": {
+										"damage": 3
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								}
+							},
+							{
+								"open": {
+									"in_powder_snow": {
+										"minecraft:is_shaking": {},
+										"minecraft:timer": {
+											"looping": false,
+											"time": 20,
+											"time_down_event": {
+												"event": "become_stray_event"
+											}
+										},
+										"minecraft:environment_sensor": {
+											"triggers": [
+												{
+													"filters": {
+														"test": "in_block",
+														"subject": "self",
+														"operator": "!=",
+														"value": "minecraft:powder_snow"
+													},
+													"event": "got_out_of_powder_snow"
+												}
+											]
+										}
+									},
+									"got_out_of_powder_snow_environment_sensor": {
+										"minecraft:environment_sensor": {
+											"triggers": [
+												{
+													"filters": {
+														"test": "is_underwater",
+														"subject": "self",
+														"operator": "==",
+														"value": true
+													},
+													"event": "minecraft:melee_mode"
+												},
+												{
+													"filters": {
+														"test": "has_ranged_weapon",
+														"subject": "self",
+														"operator": "==",
+														"value": false
+													},
+													"event": "minecraft:melee_mode"
+												},
+												{
+													"filters": {
+														"all_of": [
+															{
+																"test": "in_water",
+																"subject": "self",
+																"operator": "==",
+																"value": false
+															},
+															{
+																"test": "has_ranged_weapon",
+																"subject": "self",
+																"operator": "==",
+																"value": true
+															}
+														]
+													},
+													"event": "minecraft:ranged_mode"
+												}
+											]
+										}
+									},
+									"minecraft:lightning_immune": {
+										"minecraft:damage_sensor": {
+											"triggers": {
+												"on_damage": {
+													"filters": {
+														"other_with_families": "lightning"
+													}
+												},
+												"deals_damage": false
+											}
+										}
+									},
+									"become_stray": {
+										"minecraft:transformation": {
+											"into": "minecraft:stray",
+											"transformation_sound": "convert_to_stray",
+											"keep_level": true,
+											"drop_inventory": true,
+											"preserve_equipment": true
+										}
+									},
+									"minecraft:ranged_attack": {
+										"minecraft:behavior.ranged_attack": {
+											"priority": 0,
+											"attack_interval_min": 1,
+											"attack_interval_max": 3,
+											"attack_radius": 15
+										},
+										"minecraft:shooter": {
+											"def": "minecraft:arrow"
+										},
+										"minecraft:environment_sensor": {
+											"triggers": [
+												{
+													"filters": {
+														"test": "is_underwater",
+														"subject": "self",
+														"operator": "==",
+														"value": true
+													},
+													"event": "minecraft:melee_mode"
+												},
+												{
+													"filters": {
+														"test": "has_ranged_weapon",
+														"subject": "self",
+														"operator": "==",
+														"value": false
+													},
+													"event": "minecraft:melee_mode"
+												},
+												{
+													"filters": {
+														"test": "in_block",
+														"subject": "self",
+														"operator": "==",
+														"value": "minecraft:powder_snow"
+													},
+													"event": "got_in_powder_snow"
+												}
+											]
+										}
+									},
+									"minecraft:melee_attack": {
+										"minecraft:behavior.melee_attack": {
+											"priority": 4,
+											"track_target": true,
+											"speed_multiplier": 1.25
+										},
+										"minecraft:attack": {
+											"damage": 3
+										},
+										"minecraft:environment_sensor": {
+											"triggers": [
+												{
+													"filters": {
+														"all_of": [
+															{
+																"test": "in_water",
+																"subject": "self",
+																"operator": "==",
+																"value": false
+															},
+															{
+																"test": "has_ranged_weapon",
+																"subject": "self",
+																"operator": "==",
+																"value": true
+															}
+														]
+													},
+													"event": "minecraft:ranged_mode"
+												},
+												{
+													"filters": {
+														"test": "in_block",
+														"subject": "self",
+														"operator": "==",
+														"value": "minecraft:powder_snow"
+													},
+													"event": "got_in_powder_snow"
+												}
+											]
+										}
+									},
+									"despawn": {
+										"minecraft:instant_despawn": {}
+									}
+								},
+								"key": "despawn",
+								"is_minified": true,
+								"children": {
+									"minecraft:instant_despawn": {}
+								}
+							}
+						]
+					},
+					{
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:is_hidden_when_invisible": {},
+							"minecraft:experience_reward": {
+								"on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+							},
+							"minecraft:equip_item": {},
+							"minecraft:collision_box": {
+								"width": 0.6,
+								"height": 1.9
+							},
+							"minecraft:type_family": {
+								"family": [
+									"skeleton",
+									"undead",
+									"monster",
+									"mob"
+								]
+							},
+							"minecraft:breathable": {
+								"total_supply": 15,
+								"suffocate_time": 0,
+								"breathes_water": true
+							},
+							"minecraft:burns_in_daylight": {},
+							"minecraft:health": {
+								"value": 20,
+								"max": 20
+							},
+							"minecraft:hurt_on_condition": {
+								"damage_conditions": [
+									{
+										"filters": {
+											"test": "in_lava",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"cause": "lava",
+										"damage_per_tick": 4
+									}
+								]
+							},
+							"minecraft:loot": {
+								"table": "loot_tables/entities/skeleton.json"
+							},
+							"minecraft:movement": {
+								"value": 0.25
+							},
+							"minecraft:navigation.walk": {
+								"is_amphibious": true,
+								"avoid_sun": true,
+								"avoid_water": true
+							},
+							"minecraft:movement.basic": {},
+							"minecraft:jump.static": {},
+							"minecraft:can_climb": {},
+							"minecraft:nameable": {},
+							"minecraft:equipment": {
+								"table": "loot_tables/entities/skeleton_gear.json"
+							},
+							"minecraft:shooter": {
+								"def": "minecraft:arrow"
+							},
+							"minecraft:environment_sensor": {
+								"triggers": [
+									{
+										"filters": {
+											"test": "is_underwater",
+											"subject": "self",
+											"operator": "==",
+											"value": true
+										},
+										"event": "minecraft:melee_mode"
+									},
+									{
+										"filters": {
+											"test": "has_ranged_weapon",
+											"subject": "self",
+											"operator": "==",
+											"value": false
+										},
+										"event": "minecraft:melee_mode"
+									},
+									{
+										"filters": {
+											"test": "in_block",
+											"subject": "self",
+											"operator": "==",
+											"value": "minecraft:powder_snow"
+										},
+										"event": "got_in_powder_snow"
+									}
+								]
+							},
+							"minecraft:despawn": {
+								"despawn_from_distance": {}
+							},
+							"minecraft:shareables": {
+								"items": [
+									{
+										"item": "minecraft:netherite_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:stone_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:wooden_sword",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:bow",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 6
+									},
+									{
+										"item": "minecraft:netherite_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:turtle_helmet",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 6
+									},
+									{
+										"item": "minecraft:skull:0",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:skull:1",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:carved_pumpkin",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 7
+									},
+									{
+										"item": "minecraft:netherite_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_chestplate",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:netherite_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_leggings",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									},
+									{
+										"item": "minecraft:netherite_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 0
+									},
+									{
+										"item": "minecraft:diamond_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 1
+									},
+									{
+										"item": "minecraft:iron_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 2
+									},
+									{
+										"item": "minecraft:chainmail_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 3
+									},
+									{
+										"item": "minecraft:golden_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 4
+									},
+									{
+										"item": "minecraft:leather_boots",
+										"want_amount": 1,
+										"surplus_amount": 1,
+										"priority": 5
+									}
+								]
+							},
+							"minecraft:behavior.ranged_attack": {
+								"priority": 0,
+								"attack_interval_min": 1,
+								"attack_interval_max": 3,
+								"attack_radius": 15
+							},
+							"minecraft:behavior.hurt_by_target": {
+								"priority": 1
+							},
+							"minecraft:behavior.nearest_attackable_target": {
+								"priority": 2,
+								"must_see": true,
+								"reselect_targets": true,
+								"entity_types": [
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "player"
+										},
+										"max_dist": 16
+									},
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "irongolem"
+										},
+										"max_dist": 16
+									},
+									{
+										"filters": {
+											"all_of": [
+												{
+													"test": "is_family",
+													"subject": "other",
+													"value": "baby_turtle"
+												},
+												{
+													"test": "in_water",
+													"subject": "other",
+													"operator": "!=",
+													"value": true
+												}
+											]
+										},
+										"max_dist": 16
+									}
+								]
+							},
+							"minecraft:behavior.flee_sun": {
+								"priority": 2,
+								"speed_multiplier": 1
+							},
+							"minecraft:behavior.equip_item": {
+								"priority": 3
+							},
+							"minecraft:behavior.avoid_mob_type": {
+								"priority": 4,
+								"entity_types": [
+									{
+										"filters": {
+											"test": "is_family",
+											"subject": "other",
+											"value": "wolf"
+										},
+										"max_dist": 6,
+										"walk_speed_multiplier": 1.2,
+										"sprint_speed_multiplier": 1.2
+									}
+								]
+							},
+							"minecraft:behavior.pickup_items": {
+								"priority": 5,
+								"max_dist": 3,
+								"goal_radius": 2,
+								"speed_multiplier": 1,
+								"pickup_based_on_chance": true,
+								"can_pickup_any_item": true
+							},
+							"minecraft:behavior.random_stroll": {
+								"priority": 6,
+								"speed_multiplier": 1
+							},
+							"minecraft:behavior.look_at_player": {
+								"priority": 7,
+								"look_distance": 8
+							},
+							"minecraft:behavior.random_look_around": {
+								"priority": 8
+							},
+							"minecraft:physics": {},
+							"minecraft:pushable": {
+								"is_pushable": true,
+								"is_pushable_by_piston": true
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:skeleton",
+								"is_spawnable": true,
+								"is_summonable": true,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"in_powder_snow": {
+									"minecraft:is_shaking": {},
+									"minecraft:timer": {
+										"looping": false,
+										"time": 20,
+										"time_down_event": {
+											"event": "become_stray_event"
+										}
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "!=",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_out_of_powder_snow"
+											}
+										]
+									}
+								},
+								"got_out_of_powder_snow_environment_sensor": {
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											}
+										]
+									}
+								},
+								"minecraft:lightning_immune": {
+									"minecraft:damage_sensor": {
+										"triggers": {
+											"on_damage": {
+												"filters": {
+													"other_with_families": "lightning"
+												}
+											},
+											"deals_damage": false
+										}
+									}
+								},
+								"become_stray": {
+									"minecraft:transformation": {
+										"into": "minecraft:stray",
+										"transformation_sound": "convert_to_stray",
+										"keep_level": true,
+										"drop_inventory": true,
+										"preserve_equipment": true
+									}
+								},
+								"minecraft:ranged_attack": {
+									"minecraft:behavior.ranged_attack": {
+										"priority": 0,
+										"attack_interval_min": 1,
+										"attack_interval_max": 3,
+										"attack_radius": 15
+									},
+									"minecraft:shooter": {
+										"def": "minecraft:arrow"
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"test": "is_underwater",
+													"subject": "self",
+													"operator": "==",
+													"value": true
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "has_ranged_weapon",
+													"subject": "self",
+													"operator": "==",
+													"value": false
+												},
+												"event": "minecraft:melee_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								},
+								"minecraft:melee_attack": {
+									"minecraft:behavior.melee_attack": {
+										"priority": 4,
+										"track_target": true,
+										"speed_multiplier": 1.25
+									},
+									"minecraft:attack": {
+										"damage": 3
+									},
+									"minecraft:environment_sensor": {
+										"triggers": [
+											{
+												"filters": {
+													"all_of": [
+														{
+															"test": "in_water",
+															"subject": "self",
+															"operator": "==",
+															"value": false
+														},
+														{
+															"test": "has_ranged_weapon",
+															"subject": "self",
+															"operator": "==",
+															"value": true
+														}
+													]
+												},
+												"event": "minecraft:ranged_mode"
+											},
+											{
+												"filters": {
+													"test": "in_block",
+													"subject": "self",
+													"operator": "==",
+													"value": "minecraft:powder_snow"
+												},
+												"event": "got_in_powder_snow"
+											}
+										]
+									}
+								},
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:is_hidden_when_invisible": {},
+								"minecraft:experience_reward": {
+									"on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+								},
+								"minecraft:equip_item": {},
+								"minecraft:collision_box": {
+									"width": 0.6,
+									"height": 1.9
+								},
+								"minecraft:type_family": {
+									"family": [
+										"skeleton",
+										"undead",
+										"monster",
+										"mob"
+									]
+								},
+								"minecraft:breathable": {
+									"total_supply": 15,
+									"suffocate_time": 0,
+									"breathes_water": true
+								},
+								"minecraft:burns_in_daylight": {},
+								"minecraft:health": {
+									"value": 20,
+									"max": 20
+								},
+								"minecraft:hurt_on_condition": {
+									"damage_conditions": [
+										{
+											"filters": {
+												"test": "in_lava",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"cause": "lava",
+											"damage_per_tick": 4
+										}
+									]
+								},
+								"minecraft:loot": {
+									"table": "loot_tables/entities/skeleton.json"
+								},
+								"minecraft:movement": {
+									"value": 0.25
+								},
+								"minecraft:navigation.walk": {
+									"is_amphibious": true,
+									"avoid_sun": true,
+									"avoid_water": true
+								},
+								"minecraft:movement.basic": {},
+								"minecraft:jump.static": {},
+								"minecraft:can_climb": {},
+								"minecraft:nameable": {},
+								"minecraft:equipment": {
+									"table": "loot_tables/entities/skeleton_gear.json"
+								},
+								"minecraft:shooter": {
+									"def": "minecraft:arrow"
+								},
+								"minecraft:environment_sensor": {
+									"triggers": [
+										{
+											"filters": {
+												"test": "is_underwater",
+												"subject": "self",
+												"operator": "==",
+												"value": true
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "has_ranged_weapon",
+												"subject": "self",
+												"operator": "==",
+												"value": false
+											},
+											"event": "minecraft:melee_mode"
+										},
+										{
+											"filters": {
+												"test": "in_block",
+												"subject": "self",
+												"operator": "==",
+												"value": "minecraft:powder_snow"
+											},
+											"event": "got_in_powder_snow"
+										}
+									]
+								},
+								"minecraft:despawn": {
+									"despawn_from_distance": {}
+								},
+								"minecraft:shareables": {
+									"items": [
+										{
+											"item": "minecraft:netherite_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:stone_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:wooden_sword",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:bow",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 6
+										},
+										{
+											"item": "minecraft:netherite_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:turtle_helmet",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 6
+										},
+										{
+											"item": "minecraft:skull:0",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:skull:1",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:carved_pumpkin",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 7
+										},
+										{
+											"item": "minecraft:netherite_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_chestplate",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:netherite_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_leggings",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										},
+										{
+											"item": "minecraft:netherite_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 0
+										},
+										{
+											"item": "minecraft:diamond_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 1
+										},
+										{
+											"item": "minecraft:iron_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 2
+										},
+										{
+											"item": "minecraft:chainmail_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 3
+										},
+										{
+											"item": "minecraft:golden_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 4
+										},
+										{
+											"item": "minecraft:leather_boots",
+											"want_amount": 1,
+											"surplus_amount": 1,
+											"priority": 5
+										}
+									]
+								},
+								"minecraft:behavior.ranged_attack": {
+									"priority": 0,
+									"attack_interval_min": 1,
+									"attack_interval_max": 3,
+									"attack_radius": 15
+								},
+								"minecraft:behavior.hurt_by_target": {
+									"priority": 1
+								},
+								"minecraft:behavior.nearest_attackable_target": {
+									"priority": 2,
+									"must_see": true,
+									"reselect_targets": true,
+									"entity_types": [
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "player"
+											},
+											"max_dist": 16
+										},
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "irongolem"
+											},
+											"max_dist": 16
+										},
+										{
+											"filters": {
+												"all_of": [
+													{
+														"test": "is_family",
+														"subject": "other",
+														"value": "baby_turtle"
+													},
+													{
+														"test": "in_water",
+														"subject": "other",
+														"operator": "!=",
+														"value": true
+													}
+												]
+											},
+											"max_dist": 16
+										}
+									]
+								},
+								"minecraft:behavior.flee_sun": {
+									"priority": 2,
+									"speed_multiplier": 1
+								},
+								"minecraft:behavior.equip_item": {
+									"priority": 3
+								},
+								"minecraft:behavior.avoid_mob_type": {
+									"priority": 4,
+									"entity_types": [
+										{
+											"filters": {
+												"test": "is_family",
+												"subject": "other",
+												"value": "wolf"
+											},
+											"max_dist": 6,
+											"walk_speed_multiplier": 1.2,
+											"sprint_speed_multiplier": 1.2
+										}
+									]
+								},
+								"minecraft:behavior.pickup_items": {
+									"priority": 5,
+									"max_dist": 3,
+									"goal_radius": 2,
+									"speed_multiplier": 1,
+									"pickup_based_on_chance": true,
+									"can_pickup_any_item": true
+								},
+								"minecraft:behavior.random_stroll": {
+									"priority": 6,
+									"speed_multiplier": 1
+								},
+								"minecraft:behavior.look_at_player": {
+									"priority": 7,
+									"look_distance": 8
+								},
+								"minecraft:behavior.random_look_around": {
+									"priority": 8
+								},
+								"minecraft:physics": {},
+								"minecraft:pushable": {
+									"is_pushable": true,
+									"is_pushable_by_piston": true
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"minecraft:entity_spawned": {
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								},
+								"become_stray_event": {
+									"add": {
+										"component_groups": [
+											"become_stray"
+										]
+									}
+								},
+								"got_in_powder_snow": {
+									"add": {
+										"component_groups": [
+											"in_powder_snow"
+										]
+									}
+								},
+								"got_out_of_powder_snow": {
+									"remove": {
+										"component_groups": [
+											"in_powder_snow"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									}
+								},
+								"minecraft:spring_trap": {
+									"add": {
+										"component_groups": [
+											"minecraft:lightning_immune"
+										]
+									}
+								},
+								"minecraft:melee_mode": {
+									"remove": {
+										"component_groups": [
+											"minecraft:ranged_attack",
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:melee_attack"
+										]
+									}
+								},
+								"minecraft:ranged_mode": {
+									"remove": {
+										"component_groups": [
+											"minecraft:melee_attack",
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								},
+								"despawn_skeleton": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "events",
+						"children": [
+							{
+								"key": "minecraft:entity_spawned",
+								"is_minified": true,
+								"children": {
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								}
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"become_stray_event": {
+										"add": {
+											"component_groups": [
+												"become_stray"
+											]
+										}
+									},
+									"got_in_powder_snow": {
+										"add": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										}
+									},
+									"got_out_of_powder_snow": {
+										"remove": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									"minecraft:spring_trap": {
+										"add": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									},
+									"minecraft:melee_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									},
+									"minecraft:ranged_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:melee_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"despawn_skeleton": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "become_stray_event",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"become_stray"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"become_stray"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"become_stray"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"become_stray_event": {
+										"add": {
+											"component_groups": [
+												"become_stray"
+											]
+										}
+									},
+									"got_in_powder_snow": {
+										"add": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										}
+									},
+									"got_out_of_powder_snow": {
+										"remove": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									"minecraft:spring_trap": {
+										"add": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									},
+									"minecraft:melee_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									},
+									"minecraft:ranged_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:melee_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"despawn_skeleton": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "got_in_powder_snow",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"in_powder_snow"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"in_powder_snow"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"in_powder_snow"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"become_stray_event": {
+										"add": {
+											"component_groups": [
+												"become_stray"
+											]
+										}
+									},
+									"got_in_powder_snow": {
+										"add": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										}
+									},
+									"got_out_of_powder_snow": {
+										"remove": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									"minecraft:spring_trap": {
+										"add": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									},
+									"minecraft:melee_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									},
+									"minecraft:ranged_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:melee_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"despawn_skeleton": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "got_out_of_powder_snow",
+								"is_minified": true,
+								"children": {
+									"remove": {
+										"component_groups": [
+											"in_powder_snow"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									}
+								}
+							},
+							{
+								"key": "minecraft:spring_trap",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"minecraft:lightning_immune"
+												]
+											}
+										},
+										"key": "add",
+										"is_minified": true,
+										"children": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									}
+								]
+							},
+							{
+								"key": "minecraft:melee_mode",
+								"children": [
+									{
+										"key": "remove",
+										"is_minified": true,
+										"children": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									{
+										"open": {
+											"remove": {
+												"component_groups": [
+													"minecraft:ranged_attack",
+													"got_out_of_powder_snow_environment_sensor"
+												]
+											},
+											"add": {
+												"component_groups": [
+													"minecraft:melee_attack"
+												]
+											}
+										},
+										"key": "add",
+										"is_minified": true,
+										"children": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									}
+								]
+							},
+							{
+								"key": "minecraft:ranged_mode",
+								"is_minified": true,
+								"children": {
+									"remove": {
+										"component_groups": [
+											"minecraft:melee_attack",
+											"got_out_of_powder_snow_environment_sensor"
+										]
+									},
+									"add": {
+										"component_groups": [
+											"minecraft:ranged_attack"
+										]
+									}
+								}
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"become_stray_event": {
+										"add": {
+											"component_groups": [
+												"become_stray"
+											]
+										}
+									},
+									"got_in_powder_snow": {
+										"add": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										}
+									},
+									"got_out_of_powder_snow": {
+										"remove": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									"minecraft:spring_trap": {
+										"add": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									},
+									"minecraft:melee_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									},
+									"minecraft:ranged_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:melee_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"despawn_skeleton": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_skeleton",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"minecraft:entity_spawned": {
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"become_stray_event": {
+										"add": {
+											"component_groups": [
+												"become_stray"
+											]
+										}
+									},
+									"got_in_powder_snow": {
+										"add": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										}
+									},
+									"got_out_of_powder_snow": {
+										"remove": {
+											"component_groups": [
+												"in_powder_snow"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										}
+									},
+									"minecraft:spring_trap": {
+										"add": {
+											"component_groups": [
+												"minecraft:lightning_immune"
+											]
+										}
+									},
+									"minecraft:melee_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:ranged_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:melee_attack"
+											]
+										}
+									},
+									"minecraft:ranged_mode": {
+										"remove": {
+											"component_groups": [
+												"minecraft:melee_attack",
+												"got_out_of_powder_snow_environment_sensor"
+											]
+										},
+										"add": {
+											"component_groups": [
+												"minecraft:ranged_attack"
+											]
+										}
+									},
+									"despawn_skeleton": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_all_mobs",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

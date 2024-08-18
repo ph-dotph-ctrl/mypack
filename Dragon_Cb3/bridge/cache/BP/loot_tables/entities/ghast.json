@@ -1,0 +1,378 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\loot_tables\\ghast.json",
+	"file_type": "loot_table",
+	"format_version": 1,
+	"file_uuid": "b29ff853_aa83_4b18_81d7_8d3f4b748d33",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"open": {
+					"pools": [
+						{
+							"rolls": 1,
+							"entries": [
+								{
+									"type": "item",
+									"name": "bridge:ghasträne1",
+									"weight": 1,
+									"functions": [
+										{
+											"function": "set_count",
+											"count": {
+												"min": 0,
+												"max": 1
+											}
+										},
+										{
+											"function": "looting_enchant",
+											"count": {
+												"min": 0,
+												"max": 1
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"rolls": 1,
+							"entries": [
+								{
+									"type": "item",
+									"name": "bridge:gunpowder1",
+									"weight": 1,
+									"functions": [
+										{
+											"function": "set_count",
+											"count": {
+												"min": 0,
+												"max": 2
+											}
+										},
+										{
+											"function": "looting_enchant",
+											"count": {
+												"min": 0,
+												"max": 1
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				"key": "pools",
+				"children": [
+					{
+						"open": [
+							{
+								"rolls": 1,
+								"entries": [
+									{
+										"type": "item",
+										"name": "bridge:ghasträne1",
+										"weight": 1,
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											},
+											{
+												"function": "looting_enchant",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											}
+										]
+									}
+								]
+							},
+							{
+								"rolls": 1,
+								"entries": [
+									{
+										"type": "item",
+										"name": "bridge:gunpowder1",
+										"weight": 1,
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 0,
+													"max": 2
+												}
+											},
+											{
+												"function": "looting_enchant",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											}
+										]
+									}
+								]
+							}
+						],
+						"children": [
+							{
+								"open": {
+									"rolls": 1,
+									"entries": [
+										{
+											"type": "item",
+											"name": "bridge:ghasträne1",
+											"weight": 1,
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												},
+												{
+													"function": "looting_enchant",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												}
+											]
+										}
+									]
+								},
+								"data": "1",
+								"key": "rolls"
+							},
+							{
+								"open": {
+									"rolls": 1,
+									"entries": [
+										{
+											"type": "item",
+											"name": "bridge:ghasträne1",
+											"weight": 1,
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												},
+												{
+													"function": "looting_enchant",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												}
+											]
+										}
+									]
+								},
+								"key": "entries",
+								"children": [
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "bridge:ghasträne1",
+												"weight": 1,
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 0,
+															"max": 1
+														}
+													},
+													{
+														"function": "looting_enchant",
+														"count": {
+															"min": 0,
+															"max": 1
+														}
+													}
+												]
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"type": "item",
+											"name": "bridge:ghasträne1",
+											"weight": 1,
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												},
+												{
+													"function": "looting_enchant",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": [
+							{
+								"rolls": 1,
+								"entries": [
+									{
+										"type": "item",
+										"name": "bridge:ghasträne1",
+										"weight": 1,
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											},
+											{
+												"function": "looting_enchant",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											}
+										]
+									}
+								]
+							},
+							{
+								"rolls": 1,
+								"entries": [
+									{
+										"type": "item",
+										"name": "bridge:gunpowder1",
+										"weight": 1,
+										"functions": [
+											{
+												"function": "set_count",
+												"count": {
+													"min": 0,
+													"max": 2
+												}
+											},
+											{
+												"function": "looting_enchant",
+												"count": {
+													"min": 0,
+													"max": 1
+												}
+											}
+										]
+									}
+								]
+							}
+						],
+						"children": [
+							{
+								"data": "1",
+								"key": "rolls"
+							},
+							{
+								"open": {
+									"rolls": 1,
+									"entries": [
+										{
+											"type": "item",
+											"name": "bridge:gunpowder1",
+											"weight": 1,
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 0,
+														"max": 2
+													}
+												},
+												{
+													"function": "looting_enchant",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												}
+											]
+										}
+									]
+								},
+								"key": "entries",
+								"children": [
+									{
+										"open": [
+											{
+												"type": "item",
+												"name": "bridge:gunpowder1",
+												"weight": 1,
+												"functions": [
+													{
+														"function": "set_count",
+														"count": {
+															"min": 0,
+															"max": 2
+														}
+													},
+													{
+														"function": "looting_enchant",
+														"count": {
+															"min": 0,
+															"max": 1
+														}
+													}
+												]
+											}
+										],
+										"is_minified": true,
+										"children": {
+											"type": "item",
+											"name": "bridge:gunpowder1",
+											"weight": 1,
+											"functions": [
+												{
+													"function": "set_count",
+													"count": {
+														"min": 0,
+														"max": 2
+													}
+												},
+												{
+													"function": "looting_enchant",
+													"count": {
+														"min": 0,
+														"max": 1
+													}
+												}
+											]
+										}
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

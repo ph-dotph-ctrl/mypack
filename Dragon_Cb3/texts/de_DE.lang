@@ -1,0 +1,4 @@
+##bridge-file-version: #1
+entity.bridge:einweisung.name=Einweisung
+action.hint.exit.bridge:einweisung=Einweisungs Drache
+hi.action=test

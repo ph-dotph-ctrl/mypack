@@ -1,0 +1,297 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\recipes\\Kolben2.json",
+	"file_type": "recipe",
+	"format_version": 1,
+	"file_uuid": "b4457ab1_0905_410d_8f31_b8a59f0b18d5",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.16",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": 1.16,
+					"minecraft:recipe_shaped": {
+						"description": {
+							"identifier": "minecraft:piston_from_warped_planks"
+						},
+						"tags": [
+							"crafting_table"
+						],
+						"pattern": [
+							"AAA",
+							"BCB",
+							"BDB"
+						],
+						"key": {
+							"A": {
+								"item": "warped_planks"
+							},
+							"B": {
+								"item": "cobblestone"
+							},
+							"C": {
+								"item": "iron_ingot"
+							},
+							"D": {
+								"item": "redstone"
+							}
+						},
+						"result": {
+							"item": "minecarft:air",
+							"count": 0
+						},
+						"priority": 2
+					}
+				},
+				"key": "minecraft:recipe_shaped",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:piston_from_warped_planks"
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_warped_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "warped_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecarft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "tags",
+						"is_minified": true,
+						"children": [
+							"crafting_table"
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_warped_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "warped_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecarft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "pattern",
+						"is_minified": true,
+						"children": [
+							"AAA",
+							"BCB",
+							"BDB"
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_warped_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "warped_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecarft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "key",
+						"children": [
+							{
+								"open": {
+									"A": {
+										"item": "warped_planks"
+									},
+									"B": {
+										"item": "cobblestone"
+									},
+									"C": {
+										"item": "iron_ingot"
+									},
+									"D": {
+										"item": "redstone"
+									}
+								},
+								"key": "A",
+								"is_minified": true,
+								"children": {
+									"item": "warped_planks"
+								}
+							},
+							{
+								"key": "B",
+								"is_minified": true,
+								"children": {
+									"item": "cobblestone"
+								}
+							},
+							{
+								"key": "C",
+								"is_minified": true,
+								"children": {
+									"item": "iron_ingot"
+								}
+							},
+							{
+								"key": "D",
+								"is_minified": true,
+								"children": {
+									"item": "redstone"
+								}
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_warped_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "warped_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecarft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "result",
+						"is_minified": true,
+						"children": {
+							"item": "minecarft:air",
+							"count": 0
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_warped_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "warped_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecarft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"data": "2",
+						"key": "priority"
+					}
+				]
+			}
+		]
+	}
+}

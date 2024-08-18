@@ -1,0 +1,232 @@
+//bridge-file-version: #1
+{
+	"pools": [
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:cooked_beef",
+					"functions": [
+							{
+							"function": "set_count",
+							"count": {
+								"min": 10,
+								"max": 10
+								}
+							},
+							{
+							"function": "set_name",
+							"name": "verhunger nicht"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:wool",
+					"functions": [
+							{
+							"function": "set_count",
+							"count": {
+								"min": 5,
+								"max": 5
+								}
+							},
+							{
+							"function": "set_name",
+							"name": "Flauschi"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:leather_helmet",
+					"functions": [
+							{
+							"function": "specific_enchants",
+							"enchants": [
+									{
+									"id": "binding",
+									"level": 1
+									}
+								]
+							},
+							{
+							"function": "set_name",
+							"name": "Anfängerhelm"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:leather_chestplate",
+					"functions": [
+							{
+							"function": "specific_enchants",
+							"enchants": [
+									{
+									"id": "binding",
+									"level": 1
+									}
+								]
+							},
+							{
+							"function": "set_name",
+							"name": "Anfängerbrustplatte"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:leather_leggings",
+					"functions": [
+							{
+							"function": "specific_enchants",
+							"enchants": [
+									{
+									"id": "binding",
+									"level": 1
+									}
+								]
+							},
+							{
+							"function": "set_name",
+							"name": "Anfängerhose"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:leather_boots",
+					"functions": [
+							{
+							"function": "specific_enchants",
+							"enchants": [
+									{
+									"id": "binding",
+									"level": 1
+									}
+								]
+							},
+							{
+							"function": "set_name",
+							"name": "Anfängerschuhe"
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:compass",
+					"functions": [
+							{
+							"function": "set_count",
+							"count": {
+								"min": 10,
+								"max": 10
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:wooden_shovel"
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:wooden_pickaxe"
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:wooden_axe"
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:planks",
+					"functions": [
+							{
+							"function": "set_count",
+							"count": {
+								"min": 64,
+								"max": 64
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+			"rolls": 1,
+			"entries": [
+					{
+					"type": "item",
+					"name": "minecraft:stone_sword",
+					"functions": [
+							{
+							"function": "specific_enchants",
+							"enchants": [
+									{
+									"id": "mending",
+									"level": 1
+									}
+								]
+							},
+							{
+							"function": "set_name",
+							"name": "Anfängerschwert"
+							}
+						]
+					}
+				]
+			}
+	]
+}

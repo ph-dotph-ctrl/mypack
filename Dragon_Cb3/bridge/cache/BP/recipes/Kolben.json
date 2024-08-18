@@ -1,0 +1,275 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\recipes\\Kolben.json",
+	"file_type": "recipe",
+	"format_version": 1,
+	"file_uuid": "2b492866_1be7_4ba6_9047_03d81b4e83ba",
+	"file_version": 1,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.16",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": 1.16,
+					"minecraft:recipe_shaped": {
+						"description": {
+							"identifier": "minecraft:piston_from_crimson_planks"
+						},
+						"tags": [
+							"crafting_table"
+						],
+						"pattern": [
+							"AAA",
+							"BCB",
+							"BDB"
+						],
+						"key": {
+							"A": {
+								"item": "crimson_planks"
+							},
+							"B": {
+								"item": "cobblestone"
+							},
+							"C": {
+								"item": "iron_ingot"
+							},
+							"D": {
+								"item": "redstone"
+							}
+						},
+						"result": {
+							"item": "minecraft:air",
+							"count": 0
+						},
+						"priority": 2
+					}
+				},
+				"key": "minecraft:recipe_shaped",
+				"children": [
+					{
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:piston_from_crimson_planks"
+						}
+					},
+					{
+						"key": "tags",
+						"is_minified": true,
+						"children": [
+							"crafting_table"
+						]
+					},
+					{
+						"key": "pattern",
+						"is_minified": true,
+						"children": [
+							"AAA",
+							"BCB",
+							"BDB"
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_crimson_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "crimson_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecraft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "key",
+						"children": [
+							{
+								"open": {
+									"A": {
+										"item": "crimson_planks"
+									},
+									"B": {
+										"item": "cobblestone"
+									},
+									"C": {
+										"item": "iron_ingot"
+									},
+									"D": {
+										"item": "redstone"
+									}
+								},
+								"key": "A",
+								"is_minified": true,
+								"children": {
+									"item": "crimson_planks"
+								}
+							},
+							{
+								"open": {
+									"A": {
+										"item": "crimson_planks"
+									},
+									"B": {
+										"item": "cobblestone"
+									},
+									"C": {
+										"item": "iron_ingot"
+									},
+									"D": {
+										"item": "redstone"
+									}
+								},
+								"key": "B",
+								"is_minified": true,
+								"children": {
+									"item": "cobblestone"
+								}
+							},
+							{
+								"open": {
+									"A": {
+										"item": "crimson_planks"
+									},
+									"B": {
+										"item": "cobblestone"
+									},
+									"C": {
+										"item": "iron_ingot"
+									},
+									"D": {
+										"item": "redstone"
+									}
+								},
+								"key": "C",
+								"is_minified": true,
+								"children": {
+									"item": "iron_ingot"
+								}
+							},
+							{
+								"open": {
+									"A": {
+										"item": "crimson_planks"
+									},
+									"B": {
+										"item": "cobblestone"
+									},
+									"C": {
+										"item": "iron_ingot"
+									},
+									"D": {
+										"item": "redstone"
+									}
+								},
+								"key": "D",
+								"is_minified": true,
+								"children": {
+									"item": "redstone"
+								}
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_crimson_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "crimson_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecraft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"key": "result",
+						"is_minified": true,
+						"children": {
+							"item": "minecraft:air",
+							"count": 0
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:piston_from_crimson_planks"
+							},
+							"tags": [
+								"crafting_table"
+							],
+							"pattern": [
+								"AAA",
+								"BCB",
+								"BDB"
+							],
+							"key": {
+								"A": {
+									"item": "crimson_planks"
+								},
+								"B": {
+									"item": "cobblestone"
+								},
+								"C": {
+									"item": "iron_ingot"
+								},
+								"D": {
+									"item": "redstone"
+								}
+							},
+							"result": {
+								"item": "minecraft:air",
+								"count": 0
+							},
+							"priority": 2
+						},
+						"data": "2",
+						"key": "priority"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,249 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\animation_controllers\\ground.json",
+	"file_type": "animation_controller",
+	"format_version": 1,
+	"file_uuid": "56252969_16a7_4060_8728_13019dc701e9",
+	"file_version": 4,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"animation_controllers": {
+						"controller.animation.ground": {
+							"states": {
+								"default": {
+									"transitions": [
+										{
+											"scroll": "query.is_on_ground"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 9"
+									]
+								},
+								"scroll": {
+									"transitions": [
+										{
+											"default": "!query.is_on_ground"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 0"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "animation_controllers",
+				"children": [
+					{
+						"open": {
+							"controller.animation.ground": {
+								"states": {
+									"default": {
+										"transitions": [
+											{
+												"scroll": "query.is_on_ground"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 9"
+										]
+									},
+									"scroll": {
+										"transitions": [
+											{
+												"default": "!query.is_on_ground"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 0"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.ground",
+						"children": [
+							{
+								"open": {
+									"states": {
+										"default": {
+											"transitions": [
+												{
+													"scroll": "query.is_on_ground"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 9"
+											]
+										},
+										"scroll": {
+											"transitions": [
+												{
+													"default": "!query.is_on_ground"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 0"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_on_ground"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 9"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_on_ground"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"transitions": [
+														{
+															"scroll": "query.is_on_ground"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 9"
+													]
+												},
+												"key": "transitions",
+												"children": [
+													{
+														"open": [
+															{
+																"scroll": "query.is_on_ground"
+															}
+														],
+														"is_minified": true,
+														"children": {
+															"scroll": "query.is_on_ground"
+														}
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"scroll": "query.is_on_ground"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 9"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 9"
+												]
+											}
+										]
+									},
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_on_ground"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 9"
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_on_ground"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "scroll",
+										"children": [
+											{
+												"open": {
+													"transitions": [
+														{
+															"default": "!query.is_on_ground"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 0"
+													]
+												},
+												"key": "transitions",
+												"children": [
+													{
+														"open": [
+															{
+																"default": "!query.is_on_ground"
+															}
+														],
+														"is_minified": true,
+														"children": {
+															"default": "!query.is_on_ground"
+														}
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"default": "!query.is_on_ground"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 0"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

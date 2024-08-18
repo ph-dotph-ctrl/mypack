@@ -1,0 +1,151 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bridge:einweisung",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"einführing": {
+				"minecraft:attack": {
+					"damage": 0
+				},
+				"minecraft:rideable": {
+					"family_types": [
+						"player"
+					],
+					"seats": [
+						{
+							"max_rider_count": 1,
+							"position": [
+								0,
+								2.6,
+								-2.49
+							],
+							"min_rider_count": 1
+						}
+					],
+					"interact_text": "Einführung Starten"
+				},
+				"minecraft:damage_sensor": {
+					"triggers": {
+						"cause": "all",
+						"deals_damage": false
+					}
+				},
+				"minecraft:health": {
+					"value": 3,
+					"max": 2,
+					"min": 3
+				}
+			},
+			"enderkamf": {
+				"minecraft:boss": {
+					"should_darken_sky": false,
+					"hud_range": 125
+				},
+				"minecraft:health": {
+					"value": 200,
+					"max": 200
+				},
+				"minecraft:attack": {
+					"damage": 3
+				},
+				"minecraft:on_start_landing": {
+					"event": "minecraft:start_land",
+					"target": "self"
+				},
+				"minecraft:on_death": {
+					"event": "minecraft:start_death",
+					"target": "self"
+				},
+				"minecraft:on_start_takeoff": {
+					"event": "minecraft:start_fly",
+					"target": "self"
+				}
+			},
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:type_family": {
+				"family": [
+					"dragon",
+					"mob"
+				]
+			},
+			"minecraft:health": {
+				"value": 200,
+				"max": 200
+			},
+			"minecraft:collision_box": {
+				"width": 13,
+				"height": 4
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:flying_speed": {
+				"value": 0.6
+			},
+			"minecraft:attack": {
+				"damage": 3
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "fall",
+					"deals_damage": false
+				}
+			},
+			"minecraft:on_start_landing": {
+				"event": "minecraft:start_land",
+				"target": "self"
+			},
+			"minecraft:on_start_takeoff": {
+				"event": "minecraft:start_fly",
+				"target": "self"
+			},
+			"minecraft:on_death": {
+				"event": "minecraft:start_death",
+				"target": "self"
+			},
+			"minecraft:persistent": {},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			}
+		},
+		"events": {
+			"einführung": {
+				"add": {
+					"component_groups": [
+						"einführing"
+					]
+				}
+			},
+			"enderkampf": {
+				"add": {
+					"component_groups": [
+						"enderkamf"
+					]
+				}
+			},
+			"despawn_einweisung": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}

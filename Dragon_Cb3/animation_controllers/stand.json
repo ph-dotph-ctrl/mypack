@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+       				 "controller.animation.stand": {
+           									 "states": {
+             										"default": {
+            												"transitions": [{
+                     													   "stand1": "!query.is_jumping"
+             														   }]
+   												           },
+         		  									 "stand1": {
+                  		 									 "on_entry": ["/scoreboard players set @s m11 0"],
+                   											 "transitions": [{
+                   													     "default": "1.0"
+                 														    }]
+                											    }
+             									   }
+         									}
+    					}
+}

@@ -1,0 +1,330 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\jknjb\\entities\\area_effect_cloud.json",
+	"file_type": "entity",
+	"format_version": 1,
+	"file_uuid": "8d6aa82a_dbb3_4027_9159_94432bb05ad1",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.8.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.8.0",
+					"minecraft:entity": {
+						"description": {
+							"identifier": "minecraft:area_effect_cloud",
+							"is_spawnable": false,
+							"is_summonable": false,
+							"is_experimental": false
+						},
+						"component_groups": {
+							"despawn": {
+								"minecraft:instant_despawn": {}
+							}
+						},
+						"components": {
+							"minecraft:physics": {
+								"has_collision": false
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						},
+						"events": {
+							"despawn_area_effect_cloud": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							},
+							"despawn_all_mobs": {
+								"add": {
+									"component_groups": [
+										"despawn"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "minecraft:entity",
+				"children": [
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:area_effect_cloud",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:physics": {
+									"has_collision": false
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"despawn_area_effect_cloud": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "description",
+						"is_minified": true,
+						"children": {
+							"identifier": "minecraft:area_effect_cloud",
+							"is_spawnable": false,
+							"is_summonable": false,
+							"is_experimental": false
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:area_effect_cloud",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:physics": {
+									"has_collision": false
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"despawn_area_effect_cloud": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "component_groups",
+						"children": [
+							{
+								"open": {
+									"despawn": {
+										"minecraft:instant_despawn": {}
+									}
+								},
+								"key": "despawn",
+								"is_minified": true,
+								"children": {
+									"minecraft:instant_despawn": {}
+								}
+							}
+						]
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:area_effect_cloud",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:physics": {
+									"has_collision": false
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"despawn_area_effect_cloud": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "components",
+						"is_minified": true,
+						"children": {
+							"minecraft:physics": {
+								"has_collision": false
+							},
+							"minecraft:conditional_bandwidth_optimization": {}
+						}
+					},
+					{
+						"open": {
+							"description": {
+								"identifier": "minecraft:area_effect_cloud",
+								"is_spawnable": false,
+								"is_summonable": false,
+								"is_experimental": false
+							},
+							"component_groups": {
+								"despawn": {
+									"minecraft:instant_despawn": {}
+								}
+							},
+							"components": {
+								"minecraft:physics": {
+									"has_collision": false
+								},
+								"minecraft:conditional_bandwidth_optimization": {}
+							},
+							"events": {
+								"despawn_area_effect_cloud": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								},
+								"despawn_all_mobs": {
+									"add": {
+										"component_groups": [
+											"despawn"
+										]
+									}
+								}
+							}
+						},
+						"key": "events",
+						"children": [
+							{
+								"open": {
+									"despawn_area_effect_cloud": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_area_effect_cloud",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							},
+							{
+								"open": {
+									"despawn_area_effect_cloud": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									},
+									"despawn_all_mobs": {
+										"add": {
+											"component_groups": [
+												"despawn"
+											]
+										}
+									}
+								},
+								"key": "despawn_all_mobs",
+								"children": [
+									{
+										"open": {
+											"add": {
+												"component_groups": [
+													"despawn"
+												]
+											}
+										},
+										"key": "add",
+										"children": [
+											{
+												"open": {
+													"component_groups": [
+														"despawn"
+													]
+												},
+												"key": "component_groups",
+												"is_minified": true,
+												"children": [
+													"despawn"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

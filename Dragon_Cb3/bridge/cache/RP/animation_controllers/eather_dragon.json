@@ -1,0 +1,471 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_resource_packs\\jknjb\\animation_controllers\\eather_dragon.json",
+	"file_type": "rp_animation_controller",
+	"format_version": 1,
+	"file_uuid": "530329b2_4cc4_414f_9fa7_47f989e36e98",
+	"file_version": 7,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"animation_controllers": {
+						"controller.animation.eather.move": {
+							"initial_state": "default",
+							"states": {
+								"default": {
+									"animations": [
+										"move"
+									]
+								}
+							}
+						},
+						"controller.animation.eather.fly": {
+							"initial_state": "default",
+							"states": {
+								"default": {
+									"animations": [
+										"fly"
+									]
+								}
+							}
+						},
+						"controller.animation.eather.open_wigs": {
+							"initial_state": "default",
+							"states": {
+								"default": {
+									"animations": [
+										"open_wings"
+									]
+								}
+							}
+						},
+						"controller.animation.eather.sit": {
+							"initial_state": "default",
+							"states": {
+								"default": {
+									"animations": [
+										"sit"
+									]
+								}
+							}
+						},
+						"controller.animation.eather.mund": {
+							"initial_state": "default",
+							"states": {
+								"default": {
+									"animations": [
+										"mund"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "animation_controllers",
+				"children": [
+					{
+						"open": {
+							"controller.animation.eather.move": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"move"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.fly": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"fly"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.open_wigs": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"open_wings"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.sit": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"sit"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.mund": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"mund"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.eather.move",
+						"children": [
+							{
+								"data": "default",
+								"key": "initial_state"
+							},
+							{
+								"open": {
+									"initial_state": "default",
+									"states": {
+										"default": {
+											"animations": [
+												"move"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"animations": [
+													"move"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"animations": [
+														"move"
+													]
+												},
+												"key": "animations",
+												"is_minified": true,
+												"children": [
+													"move"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"key": "controller.animation.eather.fly",
+						"children": [
+							{
+								"data": "default",
+								"key": "initial_state"
+							},
+							{
+								"open": {
+									"initial_state": "default",
+									"states": {
+										"default": {
+											"animations": [
+												"fly"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"animations": [
+													"fly"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"animations": [
+														"fly"
+													]
+												},
+												"key": "animations",
+												"is_minified": true,
+												"children": [
+													"fly"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": {
+							"controller.animation.eather.move": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"move"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.fly": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"fly"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.open_wigs": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"open_wings"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.sit": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"sit"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.mund": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"mund"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.eather.open_wigs",
+						"children": [
+							{
+								"data": "default",
+								"key": "initial_state"
+							},
+							{
+								"open": {
+									"initial_state": "default",
+									"states": {
+										"default": {
+											"animations": [
+												"open_wings"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"animations": [
+													"open_wings"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"animations": [
+														"open_wings"
+													]
+												},
+												"key": "animations",
+												"is_minified": true,
+												"children": [
+													"open_wings"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"key": "controller.animation.eather.sit",
+						"children": [
+							{
+								"data": "default",
+								"key": "initial_state"
+							},
+							{
+								"open": {
+									"initial_state": "default",
+									"states": {
+										"default": {
+											"animations": [
+												"sit"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"animations": [
+													"sit"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"animations": [
+														"sit"
+													]
+												},
+												"key": "animations",
+												"is_minified": true,
+												"children": [
+													"sit"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"open": {
+							"controller.animation.eather.move": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"move"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.fly": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"fly"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.open_wigs": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"open_wings"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.sit": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"sit"
+										]
+									}
+								}
+							},
+							"controller.animation.eather.mund": {
+								"initial_state": "default",
+								"states": {
+									"default": {
+										"animations": [
+											"mund"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.eather.mund",
+						"children": [
+							{
+								"data": "default",
+								"key": "initial_state"
+							},
+							{
+								"open": {
+									"initial_state": "default",
+									"states": {
+										"default": {
+											"animations": [
+												"mund"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"animations": [
+													"mund"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"open": {
+													"animations": [
+														"mund"
+													]
+												},
+												"key": "animations",
+												"is_minified": true,
+												"children": [
+													"mund"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

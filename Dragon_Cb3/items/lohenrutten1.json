@@ -1,0 +1,16 @@
+//bridge-file-version: #1
+{
+	"format_version": "1.17.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bridge:lohenrutten1"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon":{
+					"texture":"items"
+					}
+		},
+		"events": {}
+	}
+}

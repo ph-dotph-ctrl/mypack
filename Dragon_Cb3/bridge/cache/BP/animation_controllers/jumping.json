@@ -1,0 +1,215 @@
+{
+	"file_path": "C:\\Users\\2007p\\AppData\\Local\\Packages\\Microsoft.MinecraftUWP_8wekyb3d8bbwe\\LocalState\\games\\com.mojang\\development_behavior_packs\\Dragon_Cb3\\animation_controllers\\jumping.json",
+	"file_type": "animation_controller",
+	"format_version": 1,
+	"file_uuid": "804fef74_4e5d_4657_a5ff_d0b7864724b4",
+	"file_version": 0,
+	"cache_content": {
+		"children": [
+			{
+				"data": "1.10.0",
+				"key": "format_version"
+			},
+			{
+				"open": {
+					"format_version": "1.10.0",
+					"animation_controllers": {
+						"controller.animation.jumping": {
+							"states": {
+								"default": {
+									"transitions": [
+										{
+											"scroll": "query.is_jumping"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 1 "
+									]
+								},
+								"scroll": {
+									"transitions": [
+										{
+											"default": "!query.is_jumping"
+										}
+									],
+									"on_exit": [
+										"/scoreboard players set @s m11 0"
+									]
+								}
+							}
+						}
+					}
+				},
+				"key": "animation_controllers",
+				"children": [
+					{
+						"open": {
+							"controller.animation.jumping": {
+								"states": {
+									"default": {
+										"transitions": [
+											{
+												"scroll": "query.is_jumping"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 1 "
+										]
+									},
+									"scroll": {
+										"transitions": [
+											{
+												"default": "!query.is_jumping"
+											}
+										],
+										"on_exit": [
+											"/scoreboard players set @s m11 0"
+										]
+									}
+								}
+							}
+						},
+						"key": "controller.animation.jumping",
+						"children": [
+							{
+								"open": {
+									"states": {
+										"default": {
+											"transitions": [
+												{
+													"scroll": "query.is_jumping"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 1 "
+											]
+										},
+										"scroll": {
+											"transitions": [
+												{
+													"default": "!query.is_jumping"
+												}
+											],
+											"on_exit": [
+												"/scoreboard players set @s m11 0"
+											]
+										}
+									}
+								},
+								"key": "states",
+								"children": [
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_jumping"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 1 "
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_jumping"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "default",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"scroll": "query.is_jumping"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"scroll": "query.is_jumping"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 1 "
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 1 "
+												]
+											}
+										]
+									},
+									{
+										"open": {
+											"default": {
+												"transitions": [
+													{
+														"scroll": "query.is_jumping"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 1 "
+												]
+											},
+											"scroll": {
+												"transitions": [
+													{
+														"default": "!query.is_jumping"
+													}
+												],
+												"on_exit": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										},
+										"key": "scroll",
+										"children": [
+											{
+												"key": "transitions",
+												"is_minified": true,
+												"children": [
+													{
+														"default": "!query.is_jumping"
+													}
+												]
+											},
+											{
+												"open": {
+													"transitions": [
+														{
+															"default": "!query.is_jumping"
+														}
+													],
+													"on_exit": [
+														"/scoreboard players set @s m11 0"
+													]
+												},
+												"key": "on_exit",
+												"is_minified": true,
+												"children": [
+													"/scoreboard players set @s m11 0"
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

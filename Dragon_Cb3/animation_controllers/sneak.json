@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.sneak": {
+            "states": {
+                "default": {
+                "transitions": [{
+                        "sneak": "query.is_sneaking"
+                    }]
+                },
+                "sneak": {
+                    "on_entry": ["/scoreboard players set @s m11 2"],
+                    "transitions": [{
+                        "default": "1.0"
+                    }]
+                }
+            }
+        }
+    }
+}

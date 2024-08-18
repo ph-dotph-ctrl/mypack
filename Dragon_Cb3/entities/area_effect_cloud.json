@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:area_effect_cloud",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"despawn_area_effect_cloud": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			},
+			"despawn_all_mobs": {
+				"add": {
+					"component_groups": [
+						"despawn"
+					]
+				}
+			}
+		}
+	}
+}
